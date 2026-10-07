@@ -1,0 +1,638 @@
+{
+ "dias": {},
+ "analisis": {},
+ "recibos": {
+  "2024-11-22": {
+   "inicio": "2024-09-23",
+   "fin": "2024-11-22",
+   "neto": 2337,
+   "importe": 9335,
+   "servicio": "principal"
+  },
+  "2025-01-22": {
+   "inicio": "2024-11-22",
+   "fin": "2025-01-22",
+   "neto": 0,
+   "importe": 64,
+   "servicio": "principal"
+  },
+  "2025-03-24": {
+   "inicio": "2025-01-22",
+   "fin": "2025-03-24",
+   "neto": 0,
+   "importe": 65,
+   "servicio": "principal"
+  },
+  "2025-05-23": {
+   "inicio": "2025-03-24",
+   "fin": "2025-05-23",
+   "neto": 0,
+   "importe": 58,
+   "servicio": "principal"
+  },
+  "2025-07-23": {
+   "inicio": "2025-05-23",
+   "fin": "2025-07-23",
+   "neto": 0,
+   "importe": 58,
+   "servicio": "principal"
+  },
+  "2025-09-23": {
+   "inicio": "2025-07-23",
+   "fin": "2025-09-23",
+   "neto": 0,
+   "importe": 59,
+   "servicio": "principal"
+  },
+  "2025-11-24": {
+   "inicio": "2025-09-23",
+   "fin": "2025-11-24",
+   "neto": 414,
+   "importe": 669,
+   "servicio": "principal"
+  },
+  "2026-01-22": {
+   "inicio": "2025-11-24",
+   "fin": "2026-01-22",
+   "neto": 2767,
+   "importe": 11870,
+   "servicio": "principal"
+  },
+  "2026-03-24": {
+   "inicio": "2026-01-22",
+   "fin": "2026-03-24",
+   "neto": 6181,
+   "importe": 28248,
+   "servicio": "principal"
+  },
+  "2026-05-22": {
+   "inicio": "2026-03-24",
+   "fin": "2026-05-22",
+   "neto": 2808,
+   "importe": 9520,
+   "servicio": "principal"
+  },
+  "2026-07-23": {
+   "inicio": "2026-05-22",
+   "fin": "2026-07-23",
+   "neto": 4796,
+   "importe": 19210,
+   "servicio": "principal"
+  },
+  "2026-09-24": {
+   "tarifa": "1D",
+   "inicio": "2026-07-23",
+   "fin": "2026-09-24",
+   "neto": 4724,
+   "importado": 7323,
+   "exportado": 2599,
+   "importe": 18975.19,
+   "energia": 15681.97,
+   "iva": 2509.12,
+   "dap": 784.1,
+   "lecturas": {
+    "importacion": [
+     26541,
+     33864
+    ],
+    "exportacion": [
+     86985,
+     89584
+    ]
+   },
+   "escalones": [
+    [
+     "Básico",
+     350,
+     1.013,
+     354.55
+    ],
+    [
+     "Intermedio 1",
+     450,
+     1.175,
+     528.75
+    ],
+    [
+     "Intermedio 2",
+     400,
+     1.51,
+     604.0
+    ],
+    [
+     "Excedente",
+     3524,
+     4.028,
+     14194.67
+    ]
+   ],
+   "mem": {
+    "suministro": 90.52,
+    "distribucion": 4041.85,
+    "transmision": 850.79,
+    "cenace": 35.9,
+    "energia": 3651.65,
+    "capacidad": 2229.73,
+    "scnmem": 32.6
+   },
+   "servicio": "principal"
+  }
+ },
+ "medidores": {
+  "secundario": {
+   "servicio": "secundario",
+   "medidor": "2",
+   "tarifa": "1D",
+   "esquema": "NETMET",
+   "lecturas": {
+    "importacion": 47628,
+    "exportacion": 36041
+   },
+   "periodo": "2026-07-23 a 2026-09-24",
+   "neto_periodo": 0,
+   "importe_periodo": 61.28,
+   "historial": "0 kWh en los 12 bimestres desde sep 2024; cobro mínimo de $58 a $67 por bimestre",
+   "nota": "Lecturas idénticas al periodo anterior en importación y exportación: no registra consumo ni inyección."
+  },
+  "principal": {
+   "servicio": "principal",
+   "medidor": "principal",
+   "tarifa": "1D",
+   "esquema": "NETMET",
+   "nota": "Medidor que registra la carga de la casa."
+  }
+ },
+ "solar_mes": {
+  "2024-01": {
+   "inversores": {
+    "V1-B": 692.3,
+    "V2-A": 889,
+    "V1-A": 731.4,
+    "V2-B": 365.4
+   },
+   "mes": "2024-01",
+   "total": 2678.1,
+   "v1": 1423.7,
+   "v2": 1254.4
+  },
+  "2024-02": {
+   "inversores": {
+    "V1-B": 784.3,
+    "V2-A": 984.1,
+    "V1-A": 814.2,
+    "V2-B": 405.5
+   },
+   "mes": "2024-02",
+   "total": 2988.1,
+   "v1": 1598.5,
+   "v2": 1389.6
+  },
+  "2024-03": {
+   "inversores": {
+    "V1-B": 942.3,
+    "V2-A": 1144.8,
+    "V1-A": 978.8,
+    "V2-B": 503.9
+   },
+   "mes": "2024-03",
+   "total": 3569.8,
+   "v1": 1921.1,
+   "v2": 1648.7
+  },
+  "2024-04": {
+   "inversores": {
+    "V1-B": 1047.6,
+    "V2-A": 1193.9,
+    "V1-A": 1077.6,
+    "V2-B": 541.2
+   },
+   "mes": "2024-04",
+   "total": 3860.3,
+   "v1": 2125.2,
+   "v2": 1735.1
+  },
+  "2024-05": {
+   "inversores": {
+    "V1-B": 725.6,
+    "V2-A": 828.5,
+    "V1-A": 1193.5,
+    "V2-B": 586.9
+   },
+   "mes": "2024-05",
+   "total": 3334.5,
+   "v1": 1919.1,
+   "v2": 1415.4
+  },
+  "2024-06": {
+   "inversores": {
+    "V1-B": 289.2,
+    "V2-A": 521.7,
+    "V1-A": 875.5,
+    "V2-B": 416.6
+   },
+   "mes": "2024-06",
+   "total": 2103,
+   "v1": 1164.7,
+   "v2": 938.3
+  },
+  "2024-07": {
+   "inversores": {
+    "V1-B": 552.9,
+    "V2-A": 685.2,
+    "V1-A": 638.2,
+    "V2-B": 175.3
+   },
+   "mes": "2024-07",
+   "total": 2051.6,
+   "v1": 1191.1,
+   "v2": 860.5
+  },
+  "2024-08": {
+   "inversores": {
+    "V1-B": 992,
+    "V2-A": 1161.6,
+    "V1-A": 1021.1,
+    "V2-B": 1000
+   },
+   "mes": "2024-08",
+   "total": 4174.7,
+   "v1": 2013.1,
+   "v2": 2161.6
+  },
+  "2024-09": {
+   "inversores": {
+    "V1-B": 837.9,
+    "V2-A": 237.6,
+    "V1-A": 880.6,
+    "V2-B": 876.4
+   },
+   "mes": "2024-09",
+   "total": 2832.5,
+   "v1": 1718.5,
+   "v2": 1114
+  },
+  "2024-10": {
+   "inversores": {
+    "V1-B": 518.5,
+    "V2-A": 294.4,
+    "V1-A": 528.3,
+    "V2-B": 536.6
+   },
+   "mes": "2024-10",
+   "total": 1877.8,
+   "v1": 1046.8,
+   "v2": 831
+  },
+  "2024-11": {
+   "inversores": {
+    "V1-B": 632.6,
+    "V2-A": 847.5,
+    "V1-A": 691.4,
+    "V2-B": 655.4
+   },
+   "mes": "2024-11",
+   "total": 2826.9,
+   "v1": 1324,
+   "v2": 1502.9
+  },
+  "2024-12": {
+   "inversores": {
+    "V1-B": 604.8,
+    "V2-A": 816.7,
+    "V1-A": 669.7,
+    "V2-B": 628.1
+   },
+   "mes": "2024-12",
+   "total": 2719.3,
+   "v1": 1274.5,
+   "v2": 1444.8
+  },
+  "2025-01": {
+   "inversores": {
+    "V1-B": 634.7,
+    "V2-A": 835.6,
+    "V1-A": 689,
+    "V2-B": 655.8
+   },
+   "mes": "2025-01",
+   "total": 2815.1,
+   "v1": 1323.7,
+   "v2": 1491.4
+  },
+  "2025-02": {
+   "inversores": {
+    "V1-B": 728.5,
+    "V2-A": 947.7,
+    "V1-A": 774.3,
+    "V2-B": 746.9
+   },
+   "mes": "2025-02",
+   "total": 3197.4,
+   "v1": 1502.8,
+   "v2": 1694.6
+  },
+  "2025-03": {
+   "inversores": {
+    "V1-B": 946.4,
+    "V2-A": 1152.7,
+    "V1-A": 1003.1,
+    "V2-B": 992
+   },
+   "mes": "2025-03",
+   "total": 4094.2,
+   "v1": 1949.5,
+   "v2": 2144.7
+  },
+  "2025-04": {
+   "inversores": {
+    "V1-B": 1100.6,
+    "V2-A": 1257.1,
+    "V1-A": 1139.7,
+    "V2-B": 1128.7
+   },
+   "mes": "2025-04",
+   "total": 4626.1,
+   "v1": 2240.3,
+   "v2": 2385.8
+  },
+  "2025-05": {
+   "inversores": {
+    "V1-B": 1111.7,
+    "V2-A": 1309.6,
+    "V1-A": 1142.5,
+    "V2-B": 1133
+   },
+   "mes": "2025-05",
+   "total": 4696.8,
+   "v1": 2254.2,
+   "v2": 2442.6
+  },
+  "2025-06": {
+   "inversores": {
+    "V1-B": 1045.1,
+    "V2-A": 1240.4,
+    "V1-A": 1069.7,
+    "V2-B": 1060.2
+   },
+   "mes": "2025-06",
+   "total": 4415.4,
+   "v1": 2114.8,
+   "v2": 2300.6
+  },
+  "2025-07": {
+   "inversores": {
+    "V1-B": 1023.8,
+    "V2-A": 1256.7,
+    "V1-A": 1058.3,
+    "V2-B": 1060.8
+   },
+   "mes": "2025-07",
+   "total": 4399.6,
+   "v1": 2082.1,
+   "v2": 2317.5
+  },
+  "2025-08": {
+   "inversores": {
+    "V1-B": 578.4,
+    "V2-A": 1263.5,
+    "V1-A": 1091.8,
+    "V2-B": 1092.4
+   },
+   "mes": "2025-08",
+   "total": 4026.1,
+   "v1": 1670.2,
+   "v2": 2355.9
+  },
+  "2025-09": {
+   "inversores": {
+    "V1-B": 712,
+    "V2-A": 912.6,
+    "V1-A": 811.9,
+    "V2-B": 809.3
+   },
+   "mes": "2025-09",
+   "total": 3245.8,
+   "v1": 1523.9,
+   "v2": 1721.9
+  },
+  "2025-10": {
+   "inversores": {
+    "V1-B": 708.6,
+    "V2-A": 924.5,
+    "V1-A": 750,
+    "V2-B": 731.3
+   },
+   "mes": "2025-10",
+   "total": 3114.4,
+   "v1": 1458.6,
+   "v2": 1655.8
+  },
+  "2025-11": {
+   "inversores": {
+    "V1-B": 535.3,
+    "V2-A": 704.6,
+    "V1-A": 570.3,
+    "V2-B": 549.3
+   },
+   "mes": "2025-11",
+   "total": 2359.5,
+   "v1": 1105.6,
+   "v2": 1253.9
+  },
+  "2025-12": {
+   "inversores": {
+    "V1-B": 93,
+    "V2-A": 127.1,
+    "V1-A": 105.4,
+    "V2-B": 99.2
+   },
+   "mes": "2025-12",
+   "nota": "Valores diarios planos en Growatt: posible falta de comunicación de los dataloggers",
+   "total": 424.7,
+   "v1": 198.4,
+   "v2": 226.3
+  },
+  "2026-01": {
+   "inversores": {
+    "V1-C": 0,
+    "V1-B": 93,
+    "V2-A": 127.1,
+    "V1-A": 105.4,
+    "V2-B": 99.2
+   },
+   "mes": "2026-01",
+   "nota": "Valores diarios planos en Growatt: posible falta de comunicación de los dataloggers",
+   "total": 424.7,
+   "v1": 198.4,
+   "v2": 226.3
+  },
+  "2026-02": {
+   "inversores": {
+    "V1-C": 0,
+    "V1-B": 84,
+    "V2-A": 114.8,
+    "V1-A": 95.2,
+    "V2-B": 89.6
+   },
+   "mes": "2026-02",
+   "nota": "Valores diarios planos en Growatt: posible falta de comunicación de los dataloggers",
+   "total": 383.6,
+   "v1": 179.2,
+   "v2": 204.4
+  },
+  "2026-03": {
+   "inversores": {
+    "V1-C": 0,
+    "V1-B": 274.1,
+    "V2-A": 313.2,
+    "V1-A": 295.4,
+    "V2-B": 262.8
+   },
+   "mes": "2026-03",
+   "total": 1145.5,
+   "v1": 569.5,
+   "v2": 576
+  },
+  "2026-04": {
+   "inversores": {
+    "V1-C": 0,
+    "V1-B": 603,
+    "V2-A": 612,
+    "V1-A": 615,
+    "V2-B": 558
+   },
+   "mes": "2026-04",
+   "total": 2388,
+   "v1": 1218,
+   "v2": 1170
+  },
+  "2026-05": {
+   "inversores": {
+    "V1-C": 0,
+    "V1-B": 874.2,
+    "V2-A": 1122.8,
+    "V1-A": 1138,
+    "V2-B": 1003.4
+   },
+   "mes": "2026-05",
+   "total": 4138.4,
+   "v1": 2012.2,
+   "v2": 2126.2
+  },
+  "2026-06": {
+   "inversores": {
+    "V1-C": 0,
+    "V1-B": 464.7,
+    "V2-A": 1066.5,
+    "V1-A": 1073.8,
+    "V2-B": 955.3
+   },
+   "mes": "2026-06",
+   "total": 3560.3,
+   "v1": 1538.5,
+   "v2": 2021.8
+  },
+  "2026-07": {
+   "inversores": {
+    "V1-C": 170.1,
+    "V1-B": 0,
+    "V2-A": 1167.2,
+    "V1-A": 1172.3,
+    "V2-B": 1040.8
+   },
+   "mes": "2026-07",
+   "total": 3550.4,
+   "v1": 1342.4,
+   "v2": 2208
+  },
+  "2026-08": {
+   "inversores": {
+    "V1-C": 1009,
+    "V1-B": 0,
+    "V2-A": 1098.1,
+    "V1-A": 1082.8,
+    "V2-B": 967.7
+   },
+   "mes": "2026-08",
+   "total": 4157.6,
+   "v1": 2091.8,
+   "v2": 2065.8
+  },
+  "2026-09": {
+   "inversores": {
+    "V1-C": 808.1,
+    "V1-B": 0,
+    "V2-A": 891.4,
+    "V1-A": 882.6,
+    "V2-B": 761.9
+   },
+   "mes": "2026-09",
+   "total": 3344,
+   "v1": 1690.7,
+   "v2": 1653.3
+  },
+  "2026-10": {
+   "hasta": "2026-10-07",
+   "mes": "2026-10",
+   "nota_captura": "Acumulado del 1 al 7 de octubre leído de Growatt; la tarea diaria suma cada día a partir del 8.",
+   "parcial": true,
+   "total": 714,
+   "v1": 361.3,
+   "v2": 352.7
+  }
+ },
+ "solar_plantas": {
+  "casa-vecina-1": {
+   "instalacion": "2021-12-18",
+   "inversores": [
+    {
+     "estado": "En línea",
+     "kw": 6,
+     "modelo": "MIN 6000TL-X",
+     "sn": "V1-A",
+     "total_kwh": 45489.4
+    },
+    {
+     "estado": "En línea",
+     "kw": 6,
+     "modelo": "MIN 6000 TL-X2",
+     "nota": "Produce desde el 27 jul 2026; sustituye al V1-B",
+     "sn": "V1-C",
+     "total_kwh": 2159.1
+    },
+    {
+     "estado": "Fuera de línea desde 2026-07-03 10:50",
+     "kw": 6,
+     "modelo": "MIN 6000TL-X",
+     "sn": "V1-B",
+     "total_kwh": 40649.1
+    }
+   ],
+   "kwp": 20.56,
+   "nombre": "CASA VECINA 1",
+   "total_kwh": 88297.6
+  },
+  "casa-vecina-2": {
+   "instalacion": "2021-12-18",
+   "inversores": [
+    {
+     "estado": "En línea",
+     "kw": 6,
+     "modelo": "MIN 6000TL-X",
+     "sn": "V2-A",
+     "total_kwh": 47226.7
+    },
+    {
+     "estado": "En línea",
+     "kw": 6,
+     "modelo": "MIN 6000TL-X",
+     "sn": "V2-B",
+     "total_kwh": 37778.9
+    }
+   ],
+   "kwp": 20.56,
+   "nombre": "CASA VECINA 2",
+   "total_kwh": 85005.6
+  }
+ }
+}
