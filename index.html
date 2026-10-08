@@ -570,12 +570,12 @@ function drawSolar(){
   const y25=solarMes.filter(m=>m.mes.startsWith("2025")).reduce((a,m)=>a+m.total,0);
   document.getElementById("solar-sub").textContent=`2025: ${Math.round(y25).toLocaleString("es-MX")} kWh producidos entre las dos plantas`;
   // afectaciones conocidas
-  const CAUSA={obra:"Paneles apagados por obra en azoteas",inversor:"Inversor descompuesto y sustituido"};
+  const CAUSA={obra:"Paneles apagados por obra en azoteas",obra_parcial:"Algunos días apagados por obra",inversor:"Inversor descompuesto y sustituido"};
   const A=solarMes.filter(m=>m.causa);const cb=document.getElementById("calc-box");
   if(A.length){let t=`<div class="eyebrow" style="margin-bottom:6px">Meses con afectaciones conocidas</div><div class="tbl-box" style="border:0"><table class="tiers" style="min-width:460px"><thead><tr><th>Mes</th><th>Producción</th><th>Mismo mes año anterior</th><th>Diferencia</th><th>Causa</th></tr></thead><tbody>`;
     let tp=0,tv=0;A.forEach(m=>{const [yy,mm]=m.mes.split("-");const pv=solarMes.find(x=>x.mes===`${+yy-1}-${mm}`);tp+=m.total;tv+=pv?pv.total:0;t+=`<tr><td>${MESL[mm-1]} ${yy}</td><td class="num">${Math.round(m.total).toLocaleString("es-MX")}</td><td class="num">${pv?Math.round(pv.total).toLocaleString("es-MX"):"—"}</td><td class="num">${pv?(m.total-pv.total>0?"+":"−")+Math.abs(Math.round(m.total-pv.total)).toLocaleString("es-MX"):"—"}</td><td style="text-align:left;white-space:normal">${CAUSA[m.causa]||m.causa}</td></tr>`});
     t+=`<tr><td><b>Total</b></td><td class="num"><b>${Math.round(tp).toLocaleString("es-MX")}</b></td><td class="num">${Math.round(tv).toLocaleString("es-MX")}</td><td class="num"><b>−${Math.round(tv-tp).toLocaleString("es-MX")}</b></td><td></td></tr></tbody></table></div>
-    <p class="note" style="margin-top:8px">Valores en kWh tal como los registró Growatt. De diciembre de 2025 a abril de 2026 los sistemas estuvieron apagados por reparaciones en las azoteas y la obra terminó en abril. En diciembre, enero y febrero Growatt repartió en partes iguales por día lo que marcaron los contadores. En junio y julio de 2026 un inversor de CASA VECINA 1 se descompuso y fue sustituido; el nuevo produce desde el 27 de julio.</p>`;
+    <p class="note" style="margin-top:8px">Valores en kWh tal como los registró Growatt. De diciembre de 2025 a abril de 2026 los sistemas estuvieron apagados por reparaciones en las azoteas; la obra terminó en abril y en mayo todavía se apagaron algunos días. En diciembre, enero y febrero Growatt repartió en partes iguales por día lo que marcaron los contadores. En junio y julio de 2026 un inversor de CASA VECINA 1 se descompuso y fue sustituido; el nuevo produce desde el 27 de julio.</p>`;
     cb.innerHTML=t;cb.hidden=false}else cb.hidden=true;
   // pérdidas
   const P=perdidas(),tot=P.reduce((a,p)=>a+p.dif,0),mg=marginal();
