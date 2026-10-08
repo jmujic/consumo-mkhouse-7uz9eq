@@ -447,14 +447,12 @@
     "V2-B": 99.2
    },
    "mes": "2025-12",
-   "nota": "Growatt registra 424.7 kWh repartidos en partes iguales por día (los dataloggers no reportaron). Producción calculada con el balance del recibo de CFE: 65.1 kWh/día.",
+   "nota": "Sistemas apagados por obra en azoteas. Growatt repartió en partes iguales por día lo que marcaron los contadores.",
    "total": 424.7,
    "v1": 198.4,
    "v2": 226.3,
-   "calc_total": 2017,
-   "calc_v1": 942,
-   "calc_v2": 1075,
-   "exp_total": 3382
+   "obra": true,
+   "causa": "obra"
   },
   "2026-01": {
    "inversores": {
@@ -465,14 +463,12 @@
     "V2-B": 99.2
    },
    "mes": "2026-01",
-   "nota": "Growatt registra 424.7 kWh repartidos en partes iguales por día (los dataloggers no reportaron). Producción calculada con el balance del recibo de CFE: 65.1 kWh/día hasta el 21 y 19.0 kWh/día desde el 22.",
+   "nota": "Sistemas apagados por obra en azoteas. Growatt repartió en partes iguales por día lo que marcaron los contadores.",
    "total": 424.7,
    "v1": 198.4,
    "v2": 226.3,
-   "calc_total": 1556,
-   "calc_v1": 727,
-   "calc_v2": 829,
-   "exp_total": 2941
+   "obra": true,
+   "causa": "obra"
   },
   "2026-02": {
    "inversores": {
@@ -483,14 +479,12 @@
     "V2-B": 89.6
    },
    "mes": "2026-02",
-   "nota": "Growatt registra 383.6 kWh repartidos en partes iguales por día (los dataloggers no reportaron). Producción calculada con el balance del recibo de CFE: 19.0 kWh/día.",
+   "nota": "Sistemas apagados por obra en azoteas. Growatt repartió en partes iguales por día lo que marcaron los contadores.",
    "total": 383.6,
    "v1": 179.2,
    "v2": 204.4,
-   "calc_total": 531,
-   "calc_v1": 248,
-   "calc_v2": 283,
-   "exp_total": 3118
+   "obra": true,
+   "causa": "obra"
   },
   "2026-03": {
    "inversores": {
@@ -503,7 +497,10 @@
    "mes": "2026-03",
    "total": 1145.5,
    "v1": 569.5,
-   "v2": 576
+   "v2": 576,
+   "obra": true,
+   "causa": "obra",
+   "nota": "Sistemas apagados parte del mes por obra en azoteas."
   },
   "2026-04": {
    "inversores": {
@@ -529,7 +526,10 @@
    "mes": "2026-05",
    "total": 4138.4,
    "v1": 2012.2,
-   "v2": 2126.2
+   "v2": 2126.2,
+   "obra": true,
+   "causa": "obra",
+   "nota": "Sistemas apagados parte del mes por obra en azoteas."
   },
   "2026-06": {
    "inversores": {
@@ -542,7 +542,9 @@
    "mes": "2026-06",
    "total": 3560.3,
    "v1": 1538.5,
-   "v2": 2021.8
+   "v2": 2021.8,
+   "causa": "inversor",
+   "nota": "Un inversor de CASA VECINA 1 se descompuso y fue sustituido."
   },
   "2026-07": {
    "inversores": {
@@ -555,7 +557,9 @@
    "mes": "2026-07",
    "total": 3550.4,
    "v1": 1342.4,
-   "v2": 2208
+   "v2": 2208,
+   "causa": "inversor",
+   "nota": "Un inversor de CASA VECINA 1 se descompuso y fue sustituido; el nuevo produce desde el 27 de julio."
   },
   "2026-08": {
    "inversores": {
