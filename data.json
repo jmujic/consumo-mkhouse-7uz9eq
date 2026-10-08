@@ -453,7 +453,8 @@
    "v2": 226.3,
    "calc_total": 2017,
    "calc_v1": 942,
-   "calc_v2": 1075
+   "calc_v2": 1075,
+   "exp_total": 3382
   },
   "2026-01": {
    "inversores": {
@@ -470,7 +471,8 @@
    "v2": 226.3,
    "calc_total": 1556,
    "calc_v1": 727,
-   "calc_v2": 829
+   "calc_v2": 829,
+   "exp_total": 2941
   },
   "2026-02": {
    "inversores": {
@@ -487,7 +489,8 @@
    "v2": 204.4,
    "calc_total": 531,
    "calc_v1": 248,
-   "calc_v2": 283
+   "calc_v2": 283,
+   "exp_total": 3118
   },
   "2026-03": {
    "inversores": {
