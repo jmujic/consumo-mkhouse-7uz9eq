@@ -447,10 +447,13 @@
     "V2-B": 99.2
    },
    "mes": "2025-12",
-   "nota": "Valores diarios planos en Growatt: posible falta de comunicación de los dataloggers",
+   "nota": "Growatt registra 424.7 kWh repartidos en partes iguales por día (los dataloggers no reportaron). Producción calculada con el balance del recibo de CFE: 65.1 kWh/día.",
    "total": 424.7,
    "v1": 198.4,
-   "v2": 226.3
+   "v2": 226.3,
+   "calc_total": 2017,
+   "calc_v1": 942,
+   "calc_v2": 1075
   },
   "2026-01": {
    "inversores": {
@@ -461,10 +464,13 @@
     "V2-B": 99.2
    },
    "mes": "2026-01",
-   "nota": "Valores diarios planos en Growatt: posible falta de comunicación de los dataloggers",
+   "nota": "Growatt registra 424.7 kWh repartidos en partes iguales por día (los dataloggers no reportaron). Producción calculada con el balance del recibo de CFE: 65.1 kWh/día hasta el 21 y 19.0 kWh/día desde el 22.",
    "total": 424.7,
    "v1": 198.4,
-   "v2": 226.3
+   "v2": 226.3,
+   "calc_total": 1556,
+   "calc_v1": 727,
+   "calc_v2": 829
   },
   "2026-02": {
    "inversores": {
@@ -475,10 +481,13 @@
     "V2-B": 89.6
    },
    "mes": "2026-02",
-   "nota": "Valores diarios planos en Growatt: posible falta de comunicación de los dataloggers",
+   "nota": "Growatt registra 383.6 kWh repartidos en partes iguales por día (los dataloggers no reportaron). Producción calculada con el balance del recibo de CFE: 19.0 kWh/día.",
    "total": 383.6,
    "v1": 179.2,
-   "v2": 204.4
+   "v2": 204.4,
+   "calc_total": 531,
+   "calc_v1": 248,
+   "calc_v2": 283
   },
   "2026-03": {
    "inversores": {
