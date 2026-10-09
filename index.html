@@ -78,9 +78,18 @@ svg text{fill:var(--muted);font-family:var(--f-data);font-size:11px}
 /* groups */
 .stack{display:flex;height:22px;border:1px solid var(--line)}
 .stack span{display:block;height:100%}
-.grp-legend{display:grid;grid-template-columns:repeat(auto-fill,minmax(15rem,1fr));gap:6px 18px;font-size:13px}
-.grp-legend div{display:flex;justify-content:space-between;gap:8px;border-bottom:1px dotted var(--line);padding:3px 0}
-.grp-legend i{display:inline-block;width:10px;height:10px;margin-right:6px}
+.grp-legend{display:grid;grid-template-columns:minmax(0,1fr);font-size:14px}
+.grp-row{display:grid;grid-template-columns:minmax(0,13rem) minmax(0,1fr) 5.2rem 3.6rem;gap:12px;align-items:center;padding:7px 0;border-bottom:1px solid var(--line)}
+.grp-row:last-child{border-bottom:0}
+.grp-row .num{text-align:right}
+.grp-row.zero{opacity:.55}
+.grp-head{font-family:var(--f-data);font-size:10.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;padding-top:0}
+.gname{display:flex;align-items:center;gap:8px}
+.gname i{flex:none}
+.gbar{height:8px;background:var(--line)}
+.gbar span{display:block;height:100%}
+@media (max-width:640px){.grp-row{grid-template-columns:minmax(0,1fr) 4.6rem 3.2rem}.grp-row .gbar{grid-column:1/-1;grid-row:2}.grp-head span:nth-child(2){display:none}}
+.grp-legend i{display:inline-block;width:10px;height:10px}
 
 /* alerts */
 .alerts{display:grid;gap:8px;margin:0;padding:0;list-style:none}
@@ -221,9 +230,9 @@ footer{color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);padd
     <div class="sec-head">
       <h2>Energía por día</h2>
       <div class="legend">
-        <span><i style="background:var(--grid)"></i>Desde la red</span>
-        <span><i style="background:var(--solar)"></i>Saldo no tomado de la red</span>
-        <span><i style="background:var(--solar-2)"></i>Producción de los paneles</span>
+        <span><i style="background:var(--grid)"></i>Comprado a CFE (desde la red)</span>
+        <span><i style="background:var(--solar)"></i>Paneles directo a la casa</span>
+        <span><i style="background:var(--solar-2)"></i>Producción total de los paneles</span>
         <span><i style="background:repeating-linear-gradient(45deg,var(--grid) 0 3px,var(--grid-soft) 3px 6px)"></i>Día parcial</span>
       </div>
     </div>
@@ -321,7 +330,7 @@ footer{color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);padd
 
   <footer>
     <span>Fuente: web.emporiaenergy.com, vista «Día» del dispositivo LC Inversus. Seguimiento desde el 8 oct 2026: una tarea programada captura cada mañana el día anterior completo de Emporia y Growatt.</span>
-    <span>«Saldo» es la diferencia entre la suma de circuitos y lo que entra de la red. Si es positiva, parte del consumo se cubrió con energía que no pasó por el medidor de red (por ejemplo, los paneles) o hay un sensor por calibrar.</span>
+    <span>Consumo de la casa = comprado a CFE + paneles directo a la casa (producción de los paneles menos lo que se envió a la red). «Saldo» en la bitácora es el valor que reporta Emporia.</span>
   </footer>
 </div>
 
@@ -358,33 +367,35 @@ function render(){
   const avg=comp.length?comp.reduce((a,d)=>a+d.red,0)/comp.length:null;
   meta.innerHTML=`Último registro: <b>${fecha(last.id,true)}</b>${last.parcial?' (parcial)':''}. Seguimiento desde el ${fecha(days[0].id,true)}.`;
 
-  drawDaily(avg); drawDays(); drawCircuits(); drawAlerts(avg); drawTable(); drawCruce(); drawResumen(); drawAmbiente();
+  drawDaily(); drawDays(); drawCircuits(); drawAlerts(avg); drawTable(); drawCruce(); drawResumen(); drawAmbiente();
 }
 
-function drawDaily(avg){
+function drawDaily(){
   const box=document.getElementById("daily");
-  const data=days.slice(-31);
-  const W=Math.max(640,data.length*34+80),H=240,L=44,R=12,T=14,B=34;
-  const max=Math.max(...data.map(d=>Math.max(d.red+Math.max(0,d.saldo||0),d.solar||0)),1);
+  const data=days.slice(-31).map(d=>{const auto=d.solar!=null?Math.max(0,d.solar-d.exportado):0;return{...d,auto,cons:d.red+auto}});
+  const W=Math.max(640,data.length*34+80,boxW("daily")),H=240,L=44,R=12,T=18,B=34;
+  const max=Math.max(...data.map(d=>Math.max(d.cons,d.solar||0)),1);
   const step=niceStep(max/4),top=Math.ceil(max/step)*step;
   const y=v=>T+(H-T-B)*(1-v/top);
   const bw=Math.min(26,(W-L-R)/data.length*0.62);
   const x=i=>L+(i+0.5)*(W-L-R)/data.length;
-  let s=`<svg viewBox="0 0 ${W} ${H}" width="100%" style="min-width:${Math.min(W,640)}px" role="img" aria-label="Consumo diario desde la red">`;
+  const comp=data.filter(d=>!d.parcial&&d.solar!=null);const avg=comp.length?comp.reduce((a,d)=>a+d.cons,0)/comp.length:null;
+  let s=`<svg viewBox="0 0 ${W} ${H}" width="100%" style="min-width:${Math.min(W,640)}px" role="img" aria-label="Consumo diario de la casa: paneles y red">`;
   s+=`<defs><pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="6" height="6" fill="var(--grid-soft)"/><rect width="3" height="6" fill="var(--grid)"/></pattern></defs>`;
   for(let v=0;v<=top+1e-9;v+=step){s+=`<line x1="${L}" x2="${W-R}" y1="${y(v)}" y2="${y(v)}" stroke="var(--line)" stroke-width="1"/><text x="${L-6}" y="${y(v)+4}" text-anchor="end">${+v.toFixed(2)}</text>`}
   data.forEach((d,i)=>{
-    const h=y(0)-y(d.red);
-    s+=`<rect x="${x(i)-bw/2}" y="${y(d.red)}" width="${bw}" height="${h}" fill="${d.parcial?"url(#hatch)":"var(--grid)"}"><title>${fecha(d.id,true)}: ${f2(d.red)} kWh desde la red</title></rect>`;
-    if(d.solar!=null){s+=`<rect x="${x(i)+bw/2+2}" y="${y(d.solar)}" width="${bw*0.6}" height="${y(0)-y(d.solar)}" fill="var(--solar-2)"><title>${fecha(d.id,true)}: paneles ${f1(d.solar)} kWh</title></rect>`}
-    if(d.saldo>0){s+=`<rect x="${x(i)-bw/2}" y="${y(d.red+d.saldo)}" width="${bw}" height="${y(d.red)-y(d.red+d.saldo)}" fill="var(--solar)"><title>Saldo ${f2(d.saldo)} kWh</title></rect>`}
+    const x0=x(i)-bw/2;
+    if(d.auto>0)s+=`<rect x="${x0}" y="${y(d.auto)}" width="${bw}" height="${y(0)-y(d.auto)}" fill="var(--solar)"><title>${fecha(d.id,true)}: ${f1(d.auto)} kWh de los paneles directo a la casa</title></rect>`;
+    s+=`<rect x="${x0}" y="${y(d.cons)}" width="${bw}" height="${y(d.auto)-y(d.cons)}" fill="${d.parcial?"url(#hatch)":"var(--grid)"}"><title>${fecha(d.id,true)}: ${f1(d.red)} kWh comprados a CFE</title></rect>`;
+    if(d.solar!=null){s+=`<rect x="${x(i)+bw/2+2}" y="${y(d.solar)}" width="${bw*0.6}" height="${y(0)-y(d.solar)}" fill="var(--solar-2)"><title>${fecha(d.id,true)}: paneles produjeron ${f1(d.solar)} kWh (${f1(d.exportado)} se enviaron a la red)</title></rect>`}
     if(data.length<=16||i%Math.ceil(data.length/12)===0||i===data.length-1)s+=`<text x="${x(i)}" y="${H-B+16}" text-anchor="middle">${fecha(d.id)}</text>`;
-    if(i===data.length-1)s+=`<text x="${x(i)}" y="${y(d.red+Math.max(0,d.saldo||0))-6}" text-anchor="middle" style="fill:var(--ink);font-weight:500">${f1(d.red)}</text>`;
+    if(i===data.length-1)s+=`<text x="${x(i)}" y="${y(d.cons)-6}" text-anchor="middle" style="fill:var(--ink);font-weight:500">${f1(d.cons)}</text>`;
   });
-  if(avg!=null){s+=`<line x1="${L}" x2="${W-R}" y1="${y(avg)}" y2="${y(avg)}" stroke="var(--ink)" stroke-dasharray="4 4" stroke-width="1"/><text x="${W-R}" y="${y(avg)-5}" text-anchor="end" style="fill:var(--ink)">promedio ${f1(avg)}</text>`}
-  s+=`<text x="${L}" y="${H-4}">kWh por día</text></svg>`;
+  if(avg!=null&&comp.length>1){s+=`<line x1="${L}" x2="${W-R}" y1="${y(avg)}" y2="${y(avg)}" stroke="var(--ink)" stroke-dasharray="4 4" stroke-width="1"/><text x="${W-R}" y="${y(avg)-5}" text-anchor="end" style="fill:var(--ink)">consumo promedio ${f1(avg)}</text>`}
+  s+=`<text x="${L}" y="${H-4}">kWh por día · la barra de dos colores es el consumo de la casa</text></svg>`;
   box.innerHTML=s;
 }
+function boxW(id){const e=document.getElementById(id);if(!e||!e.clientWidth)return 0;const cs=getComputedStyle(e);return Math.round(e.clientWidth-parseFloat(cs.paddingLeft)-parseFloat(cs.paddingRight))}
 function niceStep(r){const p=Math.pow(10,Math.floor(Math.log10(r)));const n=r/p;return (n<=1?1:n<=2?2:n<=5?5:10)*p}
 
 function drawDays(){
@@ -402,7 +413,8 @@ function drawCircuits(){
   let st=`<div class="eyebrow" style="margin-bottom:8px">Reparto por tipo de carga · ${fecha(d.id,true)}${d.parcial?" (parcial)":""}</div><div class="stack">`;
   GROUPS.forEach(x=>{if(g[x.key]>0)st+=`<span style="width:${g[x.key]/total*100}%;background:${x.color}" title="${x.label}: ${f2(g[x.key])} kWh"></span>`});
   st+=`</div><div class="grp-legend" style="margin-top:10px">`;
-  GROUPS.forEach(x=>{st+=`<div><span><i style="background:${x.color}"></i>${x.label}</span><span class="num">${f2(g[x.key])} · ${total?Math.round(g[x.key]/total*100):0} %</span></div>`});
+  st+=`<div class="grp-row grp-head"><span>Tipo de carga</span><span></span><span class="num">kWh</span><span class="num">%</span></div>`;
+  GROUPS.forEach(x=>{const p=total?g[x.key]/total*100:0;st+=`<div class="grp-row${g[x.key]<0.0005?" zero":""}"><span class="gname"><i style="background:${x.color}"></i>${x.label}</span><span class="gbar"><span style="width:${p}%;background:${x.color}"></span></span><span class="num">${f2(g[x.key])}</span><span class="num">${Math.round(p)} %</span></div>`});
   gb.innerHTML=st+"</div>";
   const box=document.getElementById("circuits");box.innerHTML="";
   rows.forEach(([n,v])=>{
@@ -475,13 +487,13 @@ function drawResumen(){
   document.getElementById("rs-bim-n").textContent=`Equivale a ${Math.round(mes).toLocaleString("es-MX")} kWh netos al mes; el límite de alto consumo (DAC) de la tarifa 1D es de ${DAC_1D.toLocaleString("es-MX")} kWh al mes en promedio anual.${mes>DAC_1D?` Para quedar dentro, el neto tendría que bajar unos ${f1((mes-DAC_1D)*2/60)} kWh por día.`:""}`;
   // chart últimos 14 días
   const c=complete().filter(d=>d.solar!=null).slice(-14);if(!c.length)return;
-  const W=Math.max(560,c.length*48+60),H=220,L=40,R=8,T=14,B=30;const max=Math.max(...c.map(d=>Math.max(d.red-d.exportado+d.solar,d.solar)),1),step=niceStep(max/4),top=Math.ceil(max/step)*step;
+  const W=Math.max(560,c.length*48+60,boxW("rs-chart")),H=220,L=40,R=8,T=14,B=30;const max=Math.max(...c.map(d=>Math.max(d.red-d.exportado+d.solar,d.solar)),1),step=niceStep(max/4),top=Math.ceil(max/step)*step;
   const y=v=>T+(H-T-B)*(1-v/top),x=i=>L+(i+.5)*(W-L-R)/c.length,bw=Math.min(18,(W-L-R)/c.length*.32);
   let s=`<svg viewBox="0 0 ${W} ${H}" width="100%" style="min-width:${Math.min(W,560)}px" role="img" aria-label="Consumo contra producción por día">`;
   for(let v=0;v<=top+1e-9;v+=step)s+=`<line x1="${L}" x2="${W-R}" y1="${y(v)}" y2="${y(v)}" stroke="var(--line)"/><text x="${L-6}" y="${y(v)+4}" text-anchor="end">${v}</text>`;
-  c.forEach((d,i)=>{const cons=d.red-d.exportado+d.solar;
-    s+=`<rect x="${x(i)-bw-1}" y="${y(cons)}" width="${bw}" height="${y(0)-y(cons)}" fill="var(--ink)"><title>${fecha(d.id,true)}: consumo ${f1(cons)} kWh</title></rect><rect x="${x(i)+1}" y="${y(d.solar)}" width="${bw}" height="${y(0)-y(d.solar)}" fill="var(--solar)"><title>${fecha(d.id,true)}: paneles ${f1(d.solar)} kWh</title></rect><text x="${x(i)}" y="${H-B+15}" text-anchor="middle">${fecha(d.id)}</text>`});
-  s+=`<text x="${L}" y="10">kWh por día · barra oscura: consumo de la casa · verde: producción de los paneles</text></svg>`;
+  c.forEach((d,i)=>{const auto=Math.max(0,d.solar-d.exportado),cons=d.red+auto;
+    s+=`<rect x="${x(i)-bw-1}" y="${y(auto)}" width="${bw}" height="${y(0)-y(auto)}" fill="var(--solar)"><title>${fecha(d.id,true)}: ${f1(auto)} kWh de los paneles directo a la casa</title></rect><rect x="${x(i)-bw-1}" y="${y(cons)}" width="${bw}" height="${y(auto)-y(cons)}" fill="var(--grid)"><title>${fecha(d.id,true)}: ${f1(d.red)} kWh comprados a CFE · consumo ${f1(cons)} kWh</title></rect><rect x="${x(i)+1}" y="${y(d.solar)}" width="${bw}" height="${y(0)-y(d.solar)}" fill="var(--solar-2)"><title>${fecha(d.id,true)}: paneles ${f1(d.solar)} kWh</title></rect><text x="${x(i)}" y="${H-B+15}" text-anchor="middle">${fecha(d.id)}</text>`});
+  s+=`</svg><div class="legend" style="margin-top:8px"><span><i style="background:var(--solar)"></i>Paneles directo a la casa</span><span><i style="background:var(--grid)"></i>Comprado a CFE</span><span><i style="background:var(--solar-2)"></i>Producción total de los paneles</span><span class="note">kWh por día · la barra de dos colores es el consumo de la casa</span></div>`;
   document.getElementById("rs-chart").innerHTML=s;
 }
 
@@ -521,7 +533,8 @@ function drawAmbiente(){
 document.querySelectorAll(".amb-tabs button").forEach(b=>b.addEventListener("click",()=>{ambSel=b.dataset.amb;drawAmbiente()}));
 
 /* ---------- TABS ---------- */
-function goTab(t,push){document.querySelectorAll(".tabpanel").forEach(p=>p.hidden=p.dataset.tab!==t);document.querySelectorAll(".tabs button").forEach(b=>{if(b.dataset.go===t)b.setAttribute("aria-current","page");else b.removeAttribute("aria-current")});try{localStorage.setItem("tab",t)}catch(e){}if(push)window.scrollTo({top:0})}
+function goTab(t,push){document.querySelectorAll(".tabpanel").forEach(p=>p.hidden=p.dataset.tab!==t);document.querySelectorAll(".tabs button").forEach(b=>{if(b.dataset.go===t)b.setAttribute("aria-current","page");else b.removeAttribute("aria-current")});try{localStorage.setItem("tab",t)}catch(e){}if(push)window.scrollTo({top:0});if(days.length)render()}
+let _rz;window.addEventListener("resize",()=>{clearTimeout(_rz);_rz=setTimeout(()=>{if(days.length)render()},200)});
 document.querySelectorAll(".tabs button").forEach(b=>b.addEventListener("click",()=>goTab(b.dataset.go,true)));
 {let t=(location.hash||"").slice(1);if(!["resumen","consumo","paneles","recibo"].includes(t)){try{t=localStorage.getItem("tab")}catch(e){}}if(["resumen","consumo","paneles","recibo"].includes(t))goTab(t)}
 
