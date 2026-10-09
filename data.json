@@ -1,6 +1,50 @@
 {
- "dias": {},
- "analisis": {},
+ "dias": {
+  "2026-10-08": {
+   "fecha": "2026-10-08",
+   "red": 77.966,
+   "exportado": 30.124,
+   "total": 122.77,
+   "saldo": 74.947,
+   "parcial": false,
+   "capturado": "2026-10-09T09:35:00-05:00",
+   "solar": {
+    "v1": 51,
+    "v2": 50.3
+   },
+   "circuitos": {
+    "AA Closet": 34.853,
+    "AA Closet Ppal": 20.242,
+    "AA Hab. Omi": 14.512,
+    "AA Sala": 14.122,
+    "AA Hab. Ppal": 12.076,
+    "AA Hab. Dany": 7.561,
+    "Horno": 4.111,
+    "AA Comedor": 3.805,
+    "Refrigerador lavandería": 3.656,
+    "no se sabe 2x30": 3.135,
+    "Secadora": 3.124,
+    "AA Hab. Marita": 1.158,
+    "Hidroneumático": 0.402,
+    "AA Cuarto de servicio": 0.011,
+    "Congelador": 0.001,
+    "no se sabe": 0.001
+   }
+  }
+ },
+ "analisis": {
+  "2026-10-08": {
+   "fecha": "2026-10-08",
+   "resumen": "Primer día completo de seguimiento: la casa consumió 149.1 kWh y los paneles produjeron 101.3 kWh, el 68 % del consumo. Se tomaron 78.0 kWh de la red y se enviaron 30.1 kWh, así que el neto con CFE fue de 47.8 kWh.",
+   "puntos": [
+    "Los aires acondicionados sumaron 108.3 kWh, el 88 % de lo que miden los circuitos de Emporia; los que más pesaron fueron AA Closet (34.9 kWh) y AA Closet Ppal (20.2 kWh).",
+    "De los 101.3 kWh solares, 71.2 kWh se usaron directo en la casa y 30.1 kWh salieron a la red.",
+    "Producción en línea con el promedio de octubre (102 kWh/día del 1 al 7): 51.0 kWh la casa vecina 1 y 50.3 kWh la casa vecina 2.",
+    "Los circuitos medidos suman 122.8 kWh; unos 26 kWh del consumo total pasan por cargas que Emporia no tiene en ningún sensor.",
+    "El circuito «no se sabe 2x30» consumió 3.1 kWh: conviene identificar qué alimenta."
+   ]
+  }
+ },
  "recibos": {
   "2024-11-22": {
    "inicio": "2024-09-23",
@@ -593,13 +637,13 @@
    "v2": 1653.3
   },
   "2026-10": {
-   "hasta": "2026-10-07",
+   "hasta": "2026-10-08",
    "mes": "2026-10",
    "nota_captura": "Acumulado del 1 al 7 de octubre leído de Growatt; la tarea diaria suma cada día a partir del 8.",
    "parcial": true,
-   "total": 714,
-   "v1": 361.3,
-   "v2": 352.7
+   "total": 815.3,
+   "v1": 412.3,
+   "v2": 403
   }
  },
  "solar_plantas": {
