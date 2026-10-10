@@ -23,7 +23,7 @@ TZ = ZoneInfo("America/Cancun")
 RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(RAIZ, "data.json")
 ESTADO = os.path.join(RAIZ, "estado.json")
-DISPOSITIVO_EMPORIA = "LC Inversus"
+DISPOSITIVOS_EMPORIA = ("lc inversus", "lci 1")
 PLANTAS = {"v1": "CASA VECINA 1", "v2": "CASA VECINA 2"}
 
 
@@ -47,7 +47,7 @@ def leer_emporia(fecha: dt.date):
         for c in d.channels:
             if c.name:
                 nombres[(d.device_gid, c.channel_num)] = c.name
-        if (d.device_name or "").strip().lower() == DISPOSITIVO_EMPORIA.lower():
+        if (d.device_name or "").strip().lower() in DISPOSITIVOS_EMPORIA:
             principal = d.device_gid
     if principal is None:
         con_red = [d for d in dispositivos if any(c.channel_num == "1,2,3" for c in d.channels)]
