@@ -210,10 +210,6 @@ footer{color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);padd
     <div class="panel chart-box" id="rs-chart"><div class="empty">Desde el 9 de octubre aquí se ve cada día: consumo de la casa contra producción de los paneles.</div></div>
   </section>
 
-  <section aria-label="Ahorro de emisiones">
-    <div class="panel amb-strip" id="amb-strip"></div>
-  </section>
-
   <section id="analisis">
     <div class="sec-head"><h2 id="an-title">Análisis del día</h2><p id="an-sub">Lo escribe Claude cada mañana con el día anterior completo</p></div>
     <div class="panel" id="an-body"><div class="empty">El primer análisis aparece el viernes 9 de octubre por la mañana, con el día 8 completo.</div></div>
@@ -259,26 +255,14 @@ footer{color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);padd
 </div>
 
 <div class="tabpanel" id="tab-paneles" data-tab="paneles" hidden>
-  <section id="ambiente">
-    <div class="sec-head"><h2>Ahorro de emisiones</h2><p>Lo que dejó de emitirse porque la energía la produjeron los paneles</p></div>
-    <div class="amb-tabs" role="group" aria-label="Periodo">
-      <button type="button" data-amb="total" aria-pressed="true">Desde la instalación</button>
-      <button type="button" data-amb="12m" aria-pressed="false">Últimos 12 meses</button>
-      <button type="button" data-amb="2025" aria-pressed="false">2025</button>
-      <button type="button" data-amb="dia" aria-pressed="false">Último día</button>
-    </div>
-    <div class="amb-grid" id="amb-grid"><div class="empty">Cargando…</div></div>
-    <p class="note" id="amb-note"></p>
-  </section>
-
   <section id="solar">
     <div class="sec-head">
       <h2>Producción solar por mes</h2>
-      <p id="solar-sub">Plantas Growatt CASA VECINA 1 y CASA VECINA 2</p>
+      <p id="solar-sub">Plantas Growatt S. Fotovoltaico 1 y S. Fotovoltaico 2</p>
     </div>
     <div class="legend">
-      <span><i style="background:var(--solar)"></i>CASA VECINA 1</span>
-      <span><i style="background:var(--solar-2)"></i>CASA VECINA 2</span>
+      <span><i style="background:var(--solar)"></i>S. Fotovoltaico 1</span>
+      <span><i style="background:var(--solar-2)"></i>S. Fotovoltaico 2</span>
       <span><i style="background:repeating-linear-gradient(45deg,var(--muted) 0 2px,var(--bg) 2px 5px)"></i>Paneles apagados por obra</span>
       <span><i style="background:repeating-linear-gradient(45deg,var(--warn) 0 2px,var(--warn-soft) 2px 5px)"></i>Inversor descompuesto</span>
       <span><i style="background:repeating-linear-gradient(45deg,var(--solar) 0 3px,var(--solar-soft) 3px 6px)"></i>Mes en curso</span>
@@ -516,6 +500,7 @@ function ambPeriodos(){
 }
 const fmtT=kg=>kg>=1000?`${(kg/1000).toLocaleString("es-MX",{maximumFractionDigits:1})}<small>t</small>`:`${Math.round(kg).toLocaleString("es-MX")}<small>kg</small>`;
 function drawAmbiente(){
+  if(!document.getElementById("amb-grid"))return;
   if(!plantas.length||!solarMes.length)return;
   const P=ambPeriodos();const p=P[ambSel]||P.total;const g=document.getElementById("amb-grid");
   document.querySelectorAll(".amb-tabs button").forEach(b=>{b.setAttribute("aria-pressed",b.dataset.amb===ambSel);if(b.dataset.amb==="dia")b.disabled=!P.dia});
@@ -575,8 +560,8 @@ function drawSolar(){
       s+=`<line x1="${x(i)-bw/2}" x2="${x(i)+bw/2}" y1="${y(d.g_total)}" y2="${y(d.g_total)}" stroke="var(--ink)" stroke-width="2"><title>Growatt: ${f1(d.g_total)} kWh</title></line>`;
       s+=`<text x="${x(i)}" y="${y(d.total)-4}" text-anchor="middle" style="font-size:9px;fill:var(--solar)">calc.</text>`;
     } else {
-    s+=`<rect x="${x(i)-bw/2}" y="${y(d.v1)}" width="${bw}" height="${y(0)-y(d.v1)}" fill="${odd?"url(#hs)":"var(--solar)"}"><title>${MESL[mm-1]} ${yy} · VECINA 1: ${f1(d.v1)} kWh${d.nota?" · "+d.nota:""}</title></rect>`;
-    s+=`<rect x="${x(i)-bw/2}" y="${y(d.total)}" width="${bw}" height="${y(d.v1)-y(d.total)}" fill="${odd?"var(--solar-soft)":"var(--solar-2)"}"><title>${MESL[mm-1]} ${yy} · VECINA 2: ${f1(d.v2)} kWh · total ${f1(d.total)}</title></rect>`;}
+    s+=`<rect x="${x(i)-bw/2}" y="${y(d.v1)}" width="${bw}" height="${y(0)-y(d.v1)}" fill="${odd?"url(#hs)":"var(--solar)"}"><title>${MESL[mm-1]} ${yy} · S. Fotovoltaico 1: ${f1(d.v1)} kWh${d.nota?" · "+d.nota:""}</title></rect>`;
+    s+=`<rect x="${x(i)-bw/2}" y="${y(d.total)}" width="${bw}" height="${y(d.v1)-y(d.total)}" fill="${odd?"var(--solar-soft)":"var(--solar-2)"}"><title>${MESL[mm-1]} ${yy} · S. Fotovoltaico 2: ${f1(d.v2)} kWh · total ${f1(d.total)}</title></rect>`;}
     if(mm==="01"||i===0)s+=`<line x1="${x(i)-bw/2-2}" x2="${x(i)-bw/2-2}" y1="${T}" y2="${y(0)}" stroke="var(--line)" stroke-dasharray="2 3"/><text x="${x(i)-bw/2}" y="${H-6}" style="fill:var(--ink)">${yy}</text>`;
     s+=`<text x="${x(i)}" y="${H-B+14}" text-anchor="middle" style="font-size:9.5px">${MESL[mm-1].slice(0,1).toUpperCase()}</text>`});
   s+=`<text x="${L}" y="11">kWh por mes, suma de ambas plantas</text></svg>`;box.innerHTML=s;
@@ -588,7 +573,7 @@ function drawSolar(){
   if(A.length){let t=`<div class="eyebrow" style="margin-bottom:6px">Meses con afectaciones conocidas</div><div class="tbl-box" style="border:0"><table class="tiers" style="min-width:460px"><thead><tr><th>Mes</th><th>Producción</th><th>Mismo mes año anterior</th><th>Diferencia</th><th>Causa</th></tr></thead><tbody>`;
     let tp=0,tv=0;A.forEach(m=>{const [yy,mm]=m.mes.split("-");const pv=solarMes.find(x=>x.mes===`${+yy-1}-${mm}`);tp+=m.total;tv+=pv?pv.total:0;t+=`<tr><td>${MESL[mm-1]} ${yy}</td><td class="num">${Math.round(m.total).toLocaleString("es-MX")}</td><td class="num">${pv?Math.round(pv.total).toLocaleString("es-MX"):"—"}</td><td class="num">${pv?(m.total-pv.total>0?"+":"−")+Math.abs(Math.round(m.total-pv.total)).toLocaleString("es-MX"):"—"}</td><td style="text-align:left;white-space:normal">${CAUSA[m.causa]||m.causa}</td></tr>`});
     t+=`<tr><td><b>Total</b></td><td class="num"><b>${Math.round(tp).toLocaleString("es-MX")}</b></td><td class="num">${Math.round(tv).toLocaleString("es-MX")}</td><td class="num"><b>−${Math.round(tv-tp).toLocaleString("es-MX")}</b></td><td></td></tr></tbody></table></div>
-    <p class="note" style="margin-top:8px">Valores en kWh tal como los registró Growatt. De diciembre de 2025 a abril de 2026 los sistemas estuvieron apagados por reparaciones en las azoteas; la obra terminó en abril y en mayo todavía se apagaron algunos días. En diciembre, enero y febrero Growatt repartió en partes iguales por día lo que marcaron los contadores. En junio y julio de 2026 un inversor de CASA VECINA 1 se descompuso y fue sustituido; el nuevo produce desde el 27 de julio.</p>
+    <p class="note" style="margin-top:8px">Valores en kWh tal como los registró Growatt. De diciembre de 2025 a abril de 2026 los sistemas estuvieron apagados por reparaciones en las azoteas; la obra terminó en abril y en mayo todavía se apagaron algunos días. En diciembre, enero y febrero Growatt repartió en partes iguales por día lo que marcaron los contadores. En junio y julio de 2026 un inversor de S. Fotovoltaico 1 se descompuso y fue sustituido; el nuevo produce desde el 27 de julio.</p>
     <p class="note" style="margin-top:8px"><b>Noviembre de 2025:</b> se comparó con 9 sistemas de Cancún y Playa del Carmen monitoreados en Growatt. La mediana de la zona bajó 6 % contra noviembre de 2024 (la mayoría entre −2 % y −7 %), así que el clima explica una parte. La casa bajó 16.5 % y sus cuatro inversores bajaron casi igual (−15 % a −18 %): los unos 10 puntos restantes (~300 kWh) se deben a algo del sitio, probablemente paros en los días previos a la obra.</p>`;
     cb.innerHTML=t;cb.hidden=false}else cb.hidden=true;
   // pérdidas
