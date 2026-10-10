@@ -37,7 +37,7 @@ def leer_emporia(fecha: dt.date):
     from pyemvue.enums import Scale, Unit
 
     vue = PyEmVue()
-    if not vue.login(username=os.environ["EMPORIA_USER"], password=os.environ["EMPORIA_PASS"]):
+    if not vue.login(username=os.environ["EMPORIA_USER"].strip(), password=os.environ["EMPORIA_PASS"].strip()):
         raise RuntimeError("Emporia rechazó el inicio de sesión")
 
     dispositivos = vue.get_devices()
@@ -106,7 +106,7 @@ def _num(v):
 
 def leer_growatt(fecha: dt.date):
     """Devuelve ({clave: kWh del día}, {clave: total del mes}, {clave: inversores fuera de línea})."""
-    token = os.environ.get("GROWATT_TOKEN")
+    token = (os.environ.get("GROWATT_TOKEN") or "").strip()
     dia, mes, fuera = {}, {}, {}
     import growattServer
 
@@ -128,10 +128,19 @@ def leer_growatt(fecha: dt.date):
             fuera[clave] = sum(1 for d in api.device_list(pid).get("devices", []) if d.get("lost"))
         return dia, mes, fuera
 
-    api = growattServer.GrowattApi(add_random_user_id=True)
-    login = api.login(os.environ["GROWATT_USER"], os.environ["GROWATT_PASS"])
+    login, ultimo_error = {}, None
+    for url in ("https://server.growatt.com/", "https://openapi.growatt.com/", "https://server-api.growatt.com/"):
+        try:
+            api = growattServer.GrowattApi(add_random_user_id=True)
+            api.server_url = url
+            login = api.login(os.environ["GROWATT_USER"].strip(), os.environ["GROWATT_PASS"].strip())
+            if login.get("success"):
+                break
+            ultimo_error = f"respuesta sin éxito en {url}: {login.get('msg') or login.get('error') or ''}"
+        except Exception as e:
+            ultimo_error = f"{url}: {e}"
     if not login.get("success"):
-        raise RuntimeError("Growatt rechazó el inicio de sesión")
+        raise RuntimeError(f"Growatt rechazó el inicio de sesión ({ultimo_error})")
     plantas = api.plant_list(login["userId"])
     if isinstance(plantas, dict):
         plantas = plantas.get("data", [])
