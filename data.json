@@ -69,7 +69,7 @@
    "puntos": [
     "Los aires acondicionados sumaron 108.3 kWh, el 88 % de lo que miden los circuitos de Emporia; los que más pesaron fueron AA Closet (34.9 kWh) y AA Closet Ppal (20.2 kWh).",
     "De los 101.3 kWh solares, 71.2 kWh se usaron directo en la casa y 30.1 kWh salieron a la red.",
-    "Producción en línea con el promedio de octubre (102 kWh/día del 1 al 7): 51.0 kWh la casa vecina 1 y 50.3 kWh la casa vecina 2.",
+    "Producción en línea con el promedio de octubre (102 kWh/día del 1 al 7): 51.0 kWh el S. Fotovoltaico 1 y 50.3 kWh el S. Fotovoltaico 2.",
     "Los circuitos medidos suman 122.8 kWh; los otros 26 kWh del consumo total son de un segundo tablero eléctrico que todavía no se mide y que se agregará pronto.",
     "El circuito «no se sabe 2x30» consumió 3.1 kWh: conviene identificar qué alimenta."
    ]
@@ -79,7 +79,7 @@
    "resumen": "La casa consumió 201.4 kWh y los paneles produjeron 124.9 kWh, el 62 % del consumo. Se tomaron 90.6 kWh de la red y se enviaron 14.1 kWh, así que el neto con CFE fue de 76.5 kWh, 60 % más que el día 8.",
    "puntos": [
     "AA Sala subió de 14.1 a 50.2 kWh (+256 %) y fue el 44 % de lo medido; los aires sumaron 103.4 kWh, el 91 % de los circuitos de Emporia.",
-    "Los paneles dieron 124.9 kWh (68.4 la casa vecina 1 y 56.5 la casa vecina 2), 23 % arriba del promedio de octubre; 110.8 kWh se usaron directo en la casa y solo 14.1 salieron a la red.",
+    "Los paneles dieron 124.9 kWh (68.4 el S. Fotovoltaico 1 y 56.5 el S. Fotovoltaico 2), 23 % arriba del promedio de octubre; 110.8 kWh se usaron directo en la casa y solo 14.1 salieron a la red.",
     "Los circuitos medidos suman 113.8 kWh; los otros 87.6 kWh del consumo salieron del segundo tablero que todavía no se mide (el día 8 fueron 26 kWh).",
     "El circuito «no se sabe 2x30» volvió a consumir 3.2 kWh.",
     "Promedio de los dos días medidos: 175 kWh/día de consumo y 113 kWh/día de paneles."
@@ -634,7 +634,7 @@
    "v1": 1538.5,
    "v2": 2021.8,
    "causa": "inversor",
-   "nota": "Un inversor de CASA VECINA 1 se descompuso y fue sustituido."
+   "nota": "Un inversor de S. Fotovoltaico 1 se descompuso y fue sustituido."
   },
   "2026-07": {
    "inversores": {
@@ -649,7 +649,7 @@
    "v1": 1342.4,
    "v2": 2208,
    "causa": "inversor",
-   "nota": "Un inversor de CASA VECINA 1 se descompuso y fue sustituido; el nuevo produce desde el 27 de julio."
+   "nota": "Un inversor de S. Fotovoltaico 1 se descompuso y fue sustituido; el nuevo produce desde el 27 de julio."
   },
   "2026-08": {
    "inversores": {
@@ -715,7 +715,7 @@
     }
    ],
    "kwp": 20.56,
-   "nombre": "CASA VECINA 1",
+   "nombre": "S. Fotovoltaico 1",
    "total_kwh": 88297.6
   },
   "casa-vecina-2": {
@@ -737,7 +737,7 @@
     }
    ],
    "kwp": 20.56,
-   "nombre": "CASA VECINA 2",
+   "nombre": "S. Fotovoltaico 2",
    "total_kwh": 85005.6
   }
  }
