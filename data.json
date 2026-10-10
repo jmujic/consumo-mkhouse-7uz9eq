@@ -40,7 +40,7 @@
     "Los aires acondicionados sumaron 108.3 kWh, el 88 % de lo que miden los circuitos de Emporia; los que más pesaron fueron AA Closet (34.9 kWh) y AA Closet Ppal (20.2 kWh).",
     "De los 101.3 kWh solares, 71.2 kWh se usaron directo en la casa y 30.1 kWh salieron a la red.",
     "Producción en línea con el promedio de octubre (102 kWh/día del 1 al 7): 51.0 kWh la casa vecina 1 y 50.3 kWh la casa vecina 2.",
-    "Los circuitos medidos suman 122.8 kWh; unos 26 kWh del consumo total pasan por cargas que Emporia no tiene en ningún sensor.",
+    "Los circuitos medidos suman 122.8 kWh; los otros 26 kWh del consumo total son de un segundo tablero eléctrico que todavía no se mide y que se agregará pronto.",
     "El circuito «no se sabe 2x30» consumió 3.1 kWh: conviene identificar qué alimenta."
    ]
   }
