@@ -1,0 +1,51 @@
+name: Captura diaria
+
+on:
+  schedule:
+    - cron: "17 11 * * *"   # 06:17 en Cancún (UTC-5)
+  workflow_dispatch:
+    inputs:
+      fecha:
+        description: "Día a capturar (AAAA-MM-DD). Vacío = ayer."
+        required: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: captura
+  cancel-in-progress: false
+
+jobs:
+  capturar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pyemvue==0.18.9 growattServer==2.2.0
+      - name: Leer Emporia y Growatt
+        id: captura
+        env:
+          EMPORIA_USER: ${{ secrets.EMPORIA_USER }}
+          EMPORIA_PASS: ${{ secrets.EMPORIA_PASS }}
+          GROWATT_USER: ${{ secrets.GROWATT_USER }}
+          GROWATT_PASS: ${{ secrets.GROWATT_PASS }}
+          GROWATT_TOKEN: ${{ secrets.GROWATT_TOKEN }}
+          FECHA: ${{ inputs.fecha }}
+        run: python scripts/capturar.py
+        continue-on-error: true
+      - name: Guardar
+        run: |
+          python -m json.tool data.json > /dev/null
+          git config user.name "captura-mkhouse"
+          git config user.email "actions@users.noreply.github.com"
+          git add data.json estado.json
+          git diff --cached --quiet && exit 0
+          git commit -m "Datos del $(python -c 'import json;print(json.load(open("estado.json"))["fecha"])')"
+          git pull --rebase && git push
+      - name: Marcar falla
+        if: steps.captura.outcome == 'failure'
+        run: exit 1
