@@ -30,6 +30,36 @@
     "Congelador": 0.001,
     "no se sabe": 0.001
    }
+  },
+  "2026-10-09": {
+   "fecha": "2026-10-09",
+   "red": 90.572,
+   "exportado": 14.069,
+   "total": 113.83,
+   "saldo": 37.326,
+   "parcial": false,
+   "capturado": "2026-10-10T10:20:00-05:00",
+   "solar": {
+    "v1": 68.4,
+    "v2": 56.5
+   },
+   "circuitos": {
+    "AA Sala": 50.244,
+    "AA Closet Ppal": 21.629,
+    "AA Closet": 20.744,
+    "AA Hab. Ppal": 4.107,
+    "Refrigerador lavandería": 3.878,
+    "AA Hab. Dany": 3.382,
+    "no se sabe 2x30": 3.172,
+    "AA Hab. Omi": 2.751,
+    "Secadora": 2.142,
+    "Horno": 0.973,
+    "AA Hab. Marita": 0.512,
+    "Hidroneumático": 0.295,
+    "AA Cuarto de servicio": 0,
+    "no se sabe": 0,
+    "Congelador": 0
+   }
   }
  },
  "analisis": {
@@ -42,6 +72,17 @@
     "Producción en línea con el promedio de octubre (102 kWh/día del 1 al 7): 51.0 kWh la casa vecina 1 y 50.3 kWh la casa vecina 2.",
     "Los circuitos medidos suman 122.8 kWh; los otros 26 kWh del consumo total son de un segundo tablero eléctrico que todavía no se mide y que se agregará pronto.",
     "El circuito «no se sabe 2x30» consumió 3.1 kWh: conviene identificar qué alimenta."
+   ]
+  },
+  "2026-10-09": {
+   "fecha": "2026-10-09",
+   "resumen": "La casa consumió 201.4 kWh y los paneles produjeron 124.9 kWh, el 62 % del consumo. Se tomaron 90.6 kWh de la red y se enviaron 14.1 kWh, así que el neto con CFE fue de 76.5 kWh, 60 % más que el día 8.",
+   "puntos": [
+    "AA Sala subió de 14.1 a 50.2 kWh (+256 %) y fue el 44 % de lo medido; los aires sumaron 103.4 kWh, el 91 % de los circuitos de Emporia.",
+    "Los paneles dieron 124.9 kWh (68.4 la casa vecina 1 y 56.5 la casa vecina 2), 23 % arriba del promedio de octubre; 110.8 kWh se usaron directo en la casa y solo 14.1 salieron a la red.",
+    "Los circuitos medidos suman 113.8 kWh; los otros 87.6 kWh del consumo salieron del segundo tablero que todavía no se mide (el día 8 fueron 26 kWh).",
+    "El circuito «no se sabe 2x30» volvió a consumir 3.2 kWh.",
+    "Promedio de los dos días medidos: 175 kWh/día de consumo y 113 kWh/día de paneles."
    ]
   }
  },
@@ -637,13 +678,13 @@
    "v2": 1653.3
   },
   "2026-10": {
-   "hasta": "2026-10-08",
+   "hasta": "2026-10-09",
    "mes": "2026-10",
    "nota_captura": "Acumulado del 1 al 7 de octubre leído de Growatt; la tarea diaria suma cada día a partir del 8.",
    "parcial": true,
-   "total": 815.3,
-   "v1": 412.3,
-   "v2": 403
+   "total": 940.2,
+   "v1": 480.7,
+   "v2": 459.5
   }
  },
  "solar_plantas": {
