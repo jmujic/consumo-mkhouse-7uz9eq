@@ -85,6 +85,10 @@
     "AA Cuarto de servicio": 0,
     "Congelador": 0,
     "no se sabe": 0
+   },
+   "solar": {
+    "v1": 68.1,
+    "v2": 54.4
    }
   },
   "2026-10-11": {
@@ -111,6 +115,10 @@
     "no se sabe": 0,
     "Horno": 0,
     "Congelador": 0
+   },
+   "solar": {
+    "v1": 51.7,
+    "v2": 42.7
    }
   }
  },
@@ -135,6 +143,28 @@
     "Los circuitos medidos suman 113.8 kWh; los otros 87.6 kWh del consumo salieron del segundo tablero que todavía no se mide (el día 8 fueron 26 kWh).",
     "El circuito «no se sabe 2x30» volvió a consumir 3.2 kWh.",
     "Promedio de los dos días medidos: 175 kWh/día de consumo y 113 kWh/día de paneles."
+   ]
+  },
+  "2026-10-10": {
+   "fecha": "2026-10-10",
+   "resumen": "La casa consumió 174.5 kWh y los paneles produjeron 122.5 kWh, el 70 % del consumo. Se tomaron 78.4 kWh de la red y se enviaron 26.4 kWh, así que el neto con CFE fue de 52.0 kWh.",
+   "puntos": [
+    "AA Sala estuvo apagado todo el día (0.0 kWh, contra 50.2 el día 9) y AA Hab. Dany tampoco consumió.",
+    "Los aires sumaron 83.3 kWh, el 90 % de lo medido; AA Closet (38.4 kWh) y AA Closet Ppal (22.7 kWh) fueron los mayores.",
+    "Paneles: 68.1 kWh el S. Fotovoltaico 1 y 54.4 kWh el S. Fotovoltaico 2; 96.1 kWh se usaron directo en la casa.",
+    "Los circuitos medidos suman 92.9 kWh; unos 81.6 kWh salieron del segundo tablero que todavía no se mide.",
+    "«no se sabe 2x30» consumió 3.2 kWh, igual que los días anteriores."
+   ]
+  },
+  "2026-10-11": {
+   "fecha": "2026-10-11",
+   "resumen": "Día de consumo alto y poco sol: la casa consumió 245.2 kWh y los paneles produjeron 94.4 kWh, solo el 38 % del consumo. Se tomaron 153.3 kWh de la red y se enviaron 2.5 kWh, así que el neto con CFE fue de 150.8 kWh, el más alto desde que se mide.",
+   "puntos": [
+    "Lo tomado de la red (153.3 kWh) fue 86 % más que el promedio de los tres días anteriores (82.3 kWh).",
+    "AA Closet consumió 62.6 kWh, el doble de su promedio; AA Hab. Omi (22.6) y AA Hab. Marita (9.0) casi triplicaron el suyo, y AA Sala volvió a encenderse (25.8 kWh).",
+    "Los paneles bajaron a 94.4 kWh (51.7 el S. Fotovoltaico 1 y 42.7 el S. Fotovoltaico 2), 11 % menos que el promedio de octubre: día con menos sol. Casi todo se usó en la casa.",
+    "Los circuitos medidos suman 158.9 kWh; unos 86.3 kWh salieron del segundo tablero.",
+    "Promedio de los 4 días medidos: 193 kWh/día de consumo, 111 kWh/día de paneles y 82 kWh/día netos con CFE; a ese ritmo el bimestre sería de unos 4,900 kWh netos."
    ]
   }
  },
@@ -730,13 +760,13 @@
    "v2": 1653.3
   },
   "2026-10": {
-   "hasta": "2026-10-09",
+   "hasta": "2026-10-11",
    "mes": "2026-10",
    "nota_captura": "Acumulado del 1 al 7 de octubre leído de Growatt; la tarea diaria suma cada día a partir del 8.",
    "parcial": true,
-   "total": 940.2,
-   "v1": 480.7,
-   "v2": 459.5
+   "total": 1157.1,
+   "v1": 600.5,
+   "v2": 556.6
   }
  },
  "solar_plantas": {
