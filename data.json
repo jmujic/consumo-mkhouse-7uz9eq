@@ -60,6 +60,58 @@
     "no se sabe": 0,
     "Congelador": 0
    }
+  },
+  "2026-10-10": {
+   "fecha": "2026-10-10",
+   "red": 78.433,
+   "exportado": 26.394,
+   "total": 92.931,
+   "saldo": 40.902,
+   "parcial": false,
+   "capturado": "2026-10-12T02:20:00-05:00",
+   "circuitos": {
+    "AA Closet": 38.425,
+    "AA Closet Ppal": 22.71,
+    "AA Hab. Ppal": 9.542,
+    "AA Hab. Marita": 8.198,
+    "AA Hab. Omi": 4.438,
+    "Refrigerador lavandería": 4.169,
+    "no se sabe 2x30": 3.153,
+    "Secadora": 1.914,
+    "Hidroneumático": 0.377,
+    "Horno": 0.002,
+    "AA Sala": 0.001,
+    "AA Hab. Dany": 0,
+    "AA Cuarto de servicio": 0,
+    "Congelador": 0,
+    "no se sabe": 0
+   }
+  },
+  "2026-10-11": {
+   "fecha": "2026-10-11",
+   "red": 153.334,
+   "exportado": 2.537,
+   "total": 158.922,
+   "saldo": 8.181,
+   "parcial": false,
+   "capturado": "2026-10-12T02:20:00-05:00",
+   "circuitos": {
+    "AA Closet": 62.573,
+    "AA Sala": 25.75,
+    "AA Hab. Omi": 22.647,
+    "AA Closet Ppal": 19.738,
+    "AA Hab. Ppal": 11.36,
+    "AA Hab. Marita": 8.975,
+    "Refrigerador lavandería": 3.224,
+    "no se sabe 2x30": 3.101,
+    "Secadora": 1.237,
+    "Hidroneumático": 0.316,
+    "AA Hab. Dany": 0.001,
+    "AA Cuarto de servicio": 0,
+    "no se sabe": 0,
+    "Horno": 0,
+    "Congelador": 0
+   }
   }
  },
  "analisis": {
