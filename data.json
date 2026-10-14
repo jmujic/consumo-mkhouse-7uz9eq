@@ -150,6 +150,36 @@
     "Horno": 0,
     "Congelador": 0
    }
+  },
+  "2026-10-13": {
+   "fecha": "2026-10-13",
+   "red": 87.365,
+   "exportado": 9.899,
+   "total": 126.4,
+   "saldo": 48.953,
+   "parcial": false,
+   "capturado": "2026-10-14T15:55:00-05:00",
+   "solar": {
+    "v1": 61.6,
+    "v2": 50.0
+   },
+   "circuitos": {
+    "AA Closet": 53.489,
+    "AA Closet Ppal": 19.929,
+    "AA Hab. Dany": 18.845,
+    "AA Hab. Ppal": 9.526,
+    "AA Hab. Marita": 7.73,
+    "Refrigerador lavandería": 4.207,
+    "AA Sala": 4.018,
+    "no se sabe 2x30": 3.085,
+    "Secadora": 2.715,
+    "Horno": 2.382,
+    "Hidroneumático": 0.473,
+    "AA Cuarto de servicio": 0,
+    "Congelador": 0,
+    "no se sabe": 0,
+    "AA Hab. Omi": 0
+   }
   }
  },
  "analisis": {
@@ -206,6 +236,17 @@
     "Paneles: 61.5 kWh el S. Fotovoltaico 1 y 46.8 kWh el S. Fotovoltaico 2, en línea con octubre; casi todo (102.3 kWh) se usó directo en la casa.",
     "Los circuitos medidos suman 123.1 kWh; unos 97.5 kWh salieron del segundo tablero que todavía no se mide.",
     "Promedio de los 5 días medidos: 198 kWh/día de consumo, 110 kWh/día de paneles y 88 kWh/día netos con CFE; a ese ritmo el bimestre sería de unos 5,300 kWh netos."
+   ]
+  },
+  "2026-10-13": {
+   "fecha": "2026-10-13",
+   "resumen": "La casa consumió 189.1 kWh y los paneles produjeron 111.6 kWh, el 59 % del consumo. Se tomaron 87.4 kWh de la red y se enviaron 9.9 kWh, así que el neto con CFE fue de 77.5 kWh, 16 % menos que el promedio de los días anteriores.",
+   "puntos": [
+    "AA Closet volvió a ser el mayor (53.5 kWh, 47 % arriba de su promedio) y AA Hab. Dany subió a 18.8 kWh, más de cinco veces su promedio.",
+    "AA Hab. Omi estuvo apagado todo el día y AA Sala apenas consumió 4.0 kWh; los aires sumaron 113.5 kWh, el 90 % de lo medido.",
+    "Paneles: 61.6 kWh el S. Fotovoltaico 1 y 50.0 kWh el S. Fotovoltaico 2, 6 % arriba del promedio de octubre; 101.7 kWh se usaron directo en la casa.",
+    "Los circuitos medidos suman 126.4 kWh; unos 62.7 kWh salieron del segundo tablero que todavía no se mide.",
+    "Promedio de los 6 días medidos: 197 kWh/día de consumo, 111 kWh/día de paneles y 86 kWh/día netos con CFE; a ese ritmo el bimestre sería de unos 5,200 kWh netos."
    ]
   }
  },
@@ -801,13 +842,13 @@
    "v2": 1653.3
   },
   "2026-10": {
-   "hasta": "2026-10-12",
+   "hasta": "2026-10-13",
    "mes": "2026-10",
    "nota_captura": "Acumulado del 1 al 7 de octubre leído de Growatt; la tarea diaria suma cada día a partir del 8.",
    "parcial": true,
-   "total": 1265.4,
-   "v1": 662.0,
-   "v2": 603.4
+   "total": 1377.0,
+   "v1": 723.6,
+   "v2": 653.4
   }
  },
  "solar_plantas": {
