@@ -321,10 +321,12 @@ footer{color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);padd
 <script>
 const GROUPS=[
   {key:"aires",label:"Aires acondicionados",color:"var(--grid)",test:n=>/^aa\b|aire/i.test(n)},
-  {key:"cocina",label:"Horno y cocina",color:"#c76b3a",test:n=>/horno|cocina/i.test(n)},
-  {key:"bombeo",label:"Hidroneumático",color:"#4f7fa8",test:n=>/hidro/i.test(n)},
   {key:"frio",label:"Refrigeración",color:"#7a6fb0",test:n=>/congel|refri/i.test(n)},
-  {key:"lavado",label:"Lavandería",color:"#8a8f55",test:n=>/secad|lavad/i.test(n)},
+  {key:"luz",label:"Alumbrado",color:"#3e8e8e",test:n=>/alumbrado|luces/i.test(n)},
+  {key:"cocina",label:"Horno y cocina",color:"#c76b3a",test:n=>/horno|cocina|parrilla|cafetera|microondas|coffe|lavavajilla/i.test(n)},
+  {key:"bombeo",label:"Hidroneumático",color:"#4f7fa8",test:n=>/hidro/i.test(n)},
+  {key:"lavado",label:"Lavandería",color:"#8a8f55",test:n=>/secad|lavad|lavand/i.test(n)},
+  {key:"contactos",label:"Contactos",color:"#9a6a8f",test:n=>/contacto|site|baño/i.test(n)},
   {key:"otros",label:"Sin identificar",color:"var(--muted)",test:()=>true},
 ];
 const groupOf=n=>GROUPS.find(g=>g.test(n));
@@ -394,7 +396,9 @@ function drawCircuits(){
   const total=sumC(d);
   // groups
   const g=grp(d);const gb=document.getElementById("groups");
-  let st=`<div class="eyebrow" style="margin-bottom:8px">Reparto por tipo de carga · ${fecha(d.id,true)}${d.parcial?" (parcial)":""}</div><div class="stack">`;
+  let st=`<div class="eyebrow" style="margin-bottom:8px">Reparto por tipo de carga · ${fecha(d.id,true)}${d.parcial?" (parcial)":""}</div>`;
+  if(d.solar!=null){const cons=d.red-d.exportado+d.solar,t1=total-(d.t2||[]).reduce((a,n)=>a+(+d.circuitos[n]||0),0),t2=total-t1,sm=Math.max(0,cons-total);st+=`<p class="note" style="margin:0 0 10px">La casa consumió ${f1(cons)} kWh: ${f1(t1)} en los circuitos del tablero 1${(d.t2||[]).length?`, ${f1(t2)} en los del tablero 2`:""} y ${f1(sm)} kWh sin medir (${cons?Math.round(sm/cons*100):0} %).</p>`}
+  st+=`<div class="stack">`;
   GROUPS.forEach(x=>{if(g[x.key]>0)st+=`<span style="width:${g[x.key]/total*100}%;background:${x.color}" title="${x.label}: ${f2(g[x.key])} kWh"></span>`});
   st+=`</div><div class="grp-legend" style="margin-top:10px">`;
   st+=`<div class="grp-row grp-head"><span>Tipo de carga</span><span></span><span class="num">kWh</span><span class="num">%</span></div>`;
@@ -407,7 +411,7 @@ function drawCircuits(){
     let dl=`<span class="flat">—</span>`;
     if(a!=null&&!d.parcial){if(a<0.05&&v<0.05)dl=`<span class="flat">=</span>`;else if(a<0.05)dl=`<span class="up">nuevo</span>`;else{const p=(v/a-1)*100;dl=`<span class="${p>15?"up":p<-15?"down":"flat"}">${p>0?"+":""}${Math.round(p)} %</span>`}}
     const r=el("div",{class:"crow"+(v<0.0005?" zero":"")});
-    r.innerHTML=`<span class="name">${n}<em>${groupOf(n).label}</em></span><span class="bar"><span style="width:${v/max*100}%"></span></span><span class="kwh num">${f3(v)}</span><span class="d num">${dl}</span>`;
+    r.innerHTML=`<span class="name">${n}<em>${groupOf(n).label}${(d.t2||[]).includes(n)?" · Tablero 2":""}</em></span><span class="bar"><span style="width:${v/max*100}%"></span></span><span class="kwh num">${f3(v)}</span><span class="d num">${dl}</span>`;
     box.appendChild(r);
   });
 }
@@ -697,7 +701,7 @@ function drawCruce(){
   const db=await window.claude?.use?.("db");
   if(!db){document.getElementById("meta").textContent="No se pudo conectar con los registros desde esta vista.";return}
   db.collection("dias").onSnapshot(s=>{
-    days=s.docs.filter(d=>d.exists).map(d=>{const x=d.data();return{id:d.id,red:+x.red||0,exportado:+x.exportado||0,saldo:+x.saldo||0,parcial:!!x.parcial,circuitos:x.circuitos||{},solar:x.solar?((+x.solar.v1||0)+(+x.solar.v2||0)):null}}).sort((a,b)=>a.id<b.id?-1:1);
+    days=s.docs.filter(d=>d.exists).map(d=>{const x=d.data();return{id:d.id,red:+x.red||0,exportado:+x.exportado||0,saldo:+x.saldo||0,parcial:!!x.parcial,circuitos:{...(x.circuitos||{}),...(x.circuitos2||{})},t2:Object.keys(x.circuitos2||{}),solar:x.solar?((+x.solar.v1||0)+(+x.solar.v2||0)):null}}).sort((a,b)=>a.id<b.id?-1:1);
     render();
   },e=>{document.getElementById("meta").textContent="Se perdió la conexión con los registros. Recarga la página."});
 })();
