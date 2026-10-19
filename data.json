@@ -271,6 +271,66 @@
     "v1": 15.3,
     "v2": 11.3
    }
+  },
+  "2026-10-17": {
+   "fecha": "2026-10-17",
+   "red": 68.369,
+   "exportado": 11.066,
+   "total": 61.529,
+   "saldo": 4.235,
+   "parcial": false,
+   "capturado": "2026-10-19T02:35:00-05:00",
+   "solar": {
+    "v1": 35.2,
+    "v2": 26.8
+   },
+   "circuitos": {
+    "AA Closet Ppal": 27.7,
+    "AA Closet": 17.408,
+    "AA Hab. Dany": 6.295,
+    "Refrigerador lavandería": 3.296,
+    "no se sabe 2x30": 3.033,
+    "Secadora": 2.481,
+    "AA Hab. Ppal": 1.001,
+    "Hidroneumático": 0.221,
+    "AA Hab. Marita": 0.093,
+    "AA Sala": 0.001,
+    "Horno": 0.001,
+    "AA Cuarto de servicio": 0,
+    "Congelador": 0,
+    "no se sabe": 0,
+    "AA Hab. Omi": 0
+   }
+  },
+  "2026-10-18": {
+   "fecha": "2026-10-18",
+   "red": 32.733,
+   "exportado": 20.212,
+   "total": 57.659,
+   "saldo": 45.146,
+   "parcial": false,
+   "capturado": "2026-10-19T02:35:00-05:00",
+   "solar": {
+    "v1": 54.4,
+    "v2": 41.5
+   },
+   "circuitos": {
+    "AA Closet Ppal": 28.021,
+    "AA Closet": 14.028,
+    "AA Hab. Dany": 6.974,
+    "Refrigerador lavandería": 3.416,
+    "no se sabe 2x30": 3.065,
+    "Secadora": 1.938,
+    "Hidroneumático": 0.109,
+    "AA Hab. Marita": 0.106,
+    "AA Sala": 0.001,
+    "Horno": 0.001,
+    "AA Cuarto de servicio": 0,
+    "AA Hab. Ppal": 0,
+    "Congelador": 0,
+    "no se sabe": 0,
+    "AA Hab. Omi": 0
+   }
   }
  },
  "analisis": {
@@ -371,6 +431,27 @@
     "AA Closet Ppal fue el mayor (19.9 kWh); los circuitos medidos suman 49.2 kWh y unos 51.1 kWh salieron del segundo tablero.",
     "Desde este día Emporia cambió la forma de reportar: el monitor se llama «CASA VECINA 1», «Uso Total» coincide con el neto y el «Saldo» (24.5 kWh) es lo que no miden los circuitos. Apareció un segundo dispositivo, «Casa vecina 2 parte 1», todavía sin lecturas.",
     "Últimos 7 días (10 al 16 de octubre): 175 kWh/día de consumo, 88 kWh/día de paneles (50 % del consumo) y 87 kWh/día netos con CFE; a ese ritmo el bimestre sería de unos 5,200 kWh netos."
+   ]
+  },
+  "2026-10-17": {
+   "fecha": "2026-10-17",
+   "resumen": "La casa consumió 119.3 kWh y los paneles produjeron 62.0 kWh, el 52 % del consumo. Se tomaron 68.4 kWh de la red y se enviaron 11.1 kWh, así que el neto con CFE fue de 57.3 kWh.",
+   "puntos": [
+    "Paneles: 35.2 kWh el S. Fotovoltaico 1 y 26.8 kWh el S. Fotovoltaico 2, todavía 36 % debajo del promedio de octubre por las nubes.",
+    "Los aires sumaron 52.5 kWh: AA Closet Ppal (27.7) y AA Closet (17.4) concentraron casi todo; AA Sala, AA Hab. Omi y AA Hab. Marita estuvieron prácticamente apagados.",
+    "Los circuitos medidos suman 61.5 kWh; unos 57.8 kWh salieron del segundo tablero.",
+    "«no se sabe 2x30» sigue estable en 3.0 kWh diarios."
+   ]
+  },
+  "2026-10-18": {
+   "fecha": "2026-10-18",
+   "resumen": "El mejor día desde que se mide: la casa consumió 108.4 kWh y los paneles produjeron 95.9 kWh, el 88 % del consumo. Solo se tomaron 32.7 kWh de la red y se enviaron 20.2 kWh, así que el neto con CFE fue de apenas 12.5 kWh.",
+   "puntos": [
+    "Paneles: 54.4 kWh el S. Fotovoltaico 1 y 41.5 kWh el S. Fotovoltaico 2; volvió el sol después de cuatro días nublados.",
+    "Los aires sumaron 49.1 kWh; AA Closet Ppal fue el mayor (28.0 kWh) y AA Hab. Ppal, AA Sala y AA Hab. Omi no trabajaron.",
+    "Los circuitos medidos suman 57.7 kWh; unos 50.8 kWh salieron del segundo tablero.",
+    "El consumo bajó de unos 200 kWh/día (9 al 12 de octubre) a unos 110 kWh/día (16 al 18), sobre todo porque varios aires dejaron de usarse.",
+    "Últimos 7 días (12 al 18 de octubre): 148 kWh/día de consumo, 80 kWh/día de paneles (54 % del consumo) y 68 kWh/día netos con CFE; a ese ritmo el bimestre sería de unos 4,100 kWh netos."
    ]
   }
  },
@@ -966,13 +1047,13 @@
    "v2": 1653.3
   },
   "2026-10": {
-   "hasta": "2026-10-16",
+   "hasta": "2026-10-18",
    "mes": "2026-10",
    "nota_captura": "Acumulado del 1 al 7 de octubre leído de Growatt; la tarea diaria suma cada día a partir del 8.",
    "parcial": true,
-   "total": 1555.8,
-   "v1": 824.2,
-   "v2": 731.6
+   "total": 1713.7,
+   "v1": 913.8,
+   "v2": 799.9
   }
  },
  "solar_plantas": {
