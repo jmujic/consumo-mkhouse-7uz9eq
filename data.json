@@ -403,6 +403,73 @@
     "Inversor 1": 21.205,
     "Inversor 2": 21.132
    }
+  },
+  "2026-10-19": {
+   "fecha": "2026-10-19",
+   "red": 79.869,
+   "exportado": 1.486,
+   "total": 78.378,
+   "saldo": 14.498,
+   "parcial": false,
+   "capturado": "2026-10-20T16:40:00-05:00",
+   "nota": "Emporia reportó Uso Total igual al neto y el Saldo como la parte no medida por los circuitos del tablero 1.",
+   "solar": {
+    "v1": 24.8,
+    "v2": 19.2
+   },
+   "circuitos": {
+    "AA Closet Ppal": 22.074,
+    "AA Closet": 21.767,
+    "AA Hab. Dany": 6.759,
+    "Refrigerador lavandería": 3.704,
+    "no se sabe 2x30": 3.361,
+    "AA Sala": 3.178,
+    "Secadora": 2.209,
+    "AA Hab. Ppal": 0.433,
+    "Hidroneumático": 0.317,
+    "AA Hab. Marita": 0.077,
+    "AA Cuarto de servicio": 0,
+    "Horno": 0,
+    "Congelador": 0,
+    "no se sabe": 0,
+    "AA Hab. Omi": 0
+   },
+   "circuitos2": {
+    "Alumbrado Control On/Off (Cocina, Sala, Comedor)": 8.431,
+    "Contacto vestidor principal": 4.243,
+    "Alumbrado sala": 4.019,
+    "Refrigerador 1 Cocina": 3.358,
+    "Refrigerador 2 cocina": 2.729,
+    "Alumbrado y contactos Cuarto Dani": 1.976,
+    "Contactos (pastilla 8)": 1.911,
+    "Contactos site 2": 1.62,
+    "Contactos (pastilla 10)": 1.39,
+    "Parrilla, Campana, Barra Cocina": 0.946,
+    "Contactos Lavandería cable 1": 0.913,
+    "Contacto cuarto Omi": 0.851,
+    "Alumbrado y contactos en sala de servicio cuarto Marita": 0.766,
+    "Contacto coffe station comedor": 0.496,
+    "Cafetera cocina": 0.485,
+    "Contactos sala": 0.474,
+    "Baño Marita": 0.458,
+    "Contactos TV Sala": 0.375,
+    "Alumbrado Control DALI (Cocina, Sala, Comedor)": 0.325,
+    "Alumbrado Cuarto Omi": 0.238,
+    "Microondas cocina": 0.004,
+    "Alumbrado, Ventilador de Recámara Principal, closet, Área de juegos y Salita": 0.003,
+    "Contacto exterior terraza 1": 0.003,
+    "Lavavajillas": 0.003,
+    "Contacto exterior terraza 2": 0.003,
+    "Contactos lavandería cable 2": 0.002,
+    "Hornos cocina": 0.001,
+    "Contacto Clóset Omi cable 1": 0,
+    "Contacto Clóset Omi cable 2": 0,
+    "Área de luces tocador vestidor y cuarto principal": 0
+   },
+   "inversores_emporia": {
+    "Inversor 1": 9.809,
+    "Inversor 2": 9.789
+   }
   }
  },
  "analisis": {
@@ -526,6 +593,17 @@
     "Del consumo de la casa, 57.7 kWh pasaron por el tablero 1, 20.8 por el tablero 2 y unos 30.0 kWh (28 %) todavía no los mide ningún sensor.",
     "El consumo bajó de unos 200 kWh/día (9 al 12 de octubre) a unos 110 kWh/día (16 al 18), sobre todo porque varios aires dejaron de usarse.",
     "Últimos 7 días (12 al 18 de octubre): 148 kWh/día de consumo, 80 kWh/día de paneles (54 % del consumo) y 68 kWh/día netos con CFE; a ese ritmo el bimestre sería de unos 4,100 kWh netos."
+   ]
+  },
+  "2026-10-19": {
+   "fecha": "2026-10-19",
+   "resumen": "Día nublado: los paneles produjeron 44.0 kWh, 54 % menos que el promedio de octubre, y cubrieron el 36 % de los 122.4 kWh que consumió la casa. Se tomaron 79.9 kWh de la red y se enviaron 1.5 kWh, así que el neto con CFE fue de 78.4 kWh.",
+   "puntos": [
+    "Paneles: 24.8 kWh el S. Fotovoltaico 1 y 19.2 kWh el S. Fotovoltaico 2, los dos por debajo de 25 kWh y en la misma proporción: fue el clima.",
+    "Tablero 1: 63.9 kWh; los aires sumaron 54.3 kWh, sobre todo AA Closet Ppal (22.1) y AA Closet (21.8).",
+    "Tablero 2: 36.0 kWh, el más alto desde que se mide; subieron Alumbrado Control On/Off (8.4 kWh, contra 3.4 el día 18) y Contacto vestidor principal (4.2 kWh).",
+    "Del consumo de la casa, 63.9 kWh pasaron por el tablero 1, 36.0 por el tablero 2 y unos 22.5 kWh (18 %) no los mide ningún sensor.",
+    "Últimos 7 días (13 al 19 de octubre): 134 kWh/día de consumo, 70 kWh/día de paneles (53 % del consumo) y 63 kWh/día netos con CFE; a ese ritmo el bimestre sería de unos 3,800 kWh netos."
    ]
   }
  },
@@ -1121,13 +1199,13 @@
    "v2": 1653.3
   },
   "2026-10": {
-   "hasta": "2026-10-18",
+   "hasta": "2026-10-19",
    "mes": "2026-10",
    "nota_captura": "Acumulado del 1 al 7 de octubre leído de Growatt; la tarea diaria suma cada día a partir del 8.",
    "parcial": true,
-   "total": 1713.7,
-   "v1": 913.8,
-   "v2": 799.9
+   "total": 1757.7,
+   "v1": 938.6,
+   "v2": 819.1
   }
  },
  "solar_plantas": {
