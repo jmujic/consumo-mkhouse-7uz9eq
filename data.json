@@ -597,7 +597,7 @@
   },
   "2026-10-13": {
    "fecha": "2026-10-13",
-   "resumen": "La casa consumió 189.1 kWh y los paneles produjeron 111.6 kWh, el 59 % del consumo. Se tomaron 87.4 kWh de la red y se enviaron 9.9 kWh, así que el neto con CFE fue de 77.5 kWh, 16 % menos que el promedio de los días anteriores.",
+   "resumen": "La casa consumió 189.1 kWh y los paneles produjeron 111.6 kWh, el 59 % del consumo. Se tomaron 87.4 kWh de la red (16 % menos que el promedio de los días anteriores) y se enviaron 9.9 kWh, así que el neto con CFE fue de 77.5 kWh, 12 % menos que el promedio de los días anteriores.",
    "puntos": [
     "AA Closet volvió a ser el mayor (53.5 kWh, 47 % arriba de su promedio) y AA Hab. Dany subió a 18.8 kWh, más de cinco veces su promedio.",
     "AA Hab. Omi estuvo apagado todo el día y AA Sala apenas consumió 4.0 kWh; los aires sumaron 113.5 kWh, el 90 % de lo medido.",
@@ -619,7 +619,7 @@
   },
   "2026-10-15": {
    "fecha": "2026-10-15",
-   "resumen": "Otro día nublado: los paneles produjeron 79.5 kWh, 24 % menos que el promedio de octubre, y cubrieron el 56 % de los 142.6 kWh que consumió la casa. Se tomaron 77.2 kWh de la red y se enviaron 14.1 kWh, así que el neto con CFE fue de 63.1 kWh, el más bajo desde el día 8.",
+   "resumen": "Otro día nublado: los paneles produjeron 79.5 kWh, 23 % menos que el promedio de octubre, y cubrieron el 56 % de los 142.6 kWh que consumió la casa. Se tomaron 77.2 kWh de la red y se enviaron 14.1 kWh, así que el neto con CFE fue de 63.1 kWh, el más bajo desde el día 10.",
    "puntos": [
     "Paneles: 44.8 kWh el S. Fotovoltaico 1 y 34.7 kWh el S. Fotovoltaico 2, 22 % y 27 % debajo de su promedio; bajaron parejo, así que sigue siendo el clima.",
     "El consumo de la casa (142.6 kWh) fue el más bajo de la serie: AA Sala, AA Hab. Marita y AA Hab. Omi casi no trabajaron.",
@@ -635,7 +635,7 @@
     "Paneles: 15.3 kWh el S. Fotovoltaico 1 y 11.3 kWh el S. Fotovoltaico 2, los dos por debajo de 25 kWh y en la misma proporción: fue el clima, no una falla.",
     "El consumo de la casa fue el más bajo desde que se mide: AA Sala estuvo apagado y AA Closet (12.9 kWh) y AA Hab. Ppal (1.3 kWh) trabajaron mucho menos que su promedio.",
     "AA Closet Ppal fue el mayor (19.9 kWh); los circuitos medidos suman 49.2 kWh y unos 51.1 kWh salieron del segundo tablero.",
-    "Desde este día Emporia cambió la forma de reportar: el monitor se llama «CASA VECINA 1», «Uso Total» coincide con el neto y el «Saldo» (24.5 kWh) es lo que no miden los circuitos. Apareció un segundo dispositivo, «Casa vecina 2 parte 1», todavía sin lecturas.",
+    "Desde este día Emporia cambió la forma de reportar: «Uso Total» coincide con el neto y el «Saldo» (24.5 kWh) es lo que no miden los circuitos. Apareció además un segundo dispositivo en Emporia, todavía sin lecturas.",
     "Últimos 7 días (10 al 16 de octubre): 175 kWh/día de consumo, 88 kWh/día de paneles (50 % del consumo) y 87 kWh/día netos con CFE; a ese ritmo el bimestre sería de unos 5,200 kWh netos."
    ]
   },
