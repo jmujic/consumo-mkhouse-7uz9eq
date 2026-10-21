@@ -398,11 +398,12 @@ function drawCircuits(){
   const g=grp(d);const gb=document.getElementById("groups");
   let st=`<div class="eyebrow" style="margin-bottom:8px">Reparto por tipo de carga · ${fecha(d.id,true)}${d.parcial?" (parcial)":""}</div>`;
   if(d.solar!=null){const cons=d.red-d.exportado+d.solar,t1=total-(d.t2||[]).reduce((a,n)=>a+(+d.circuitos[n]||0),0),t2=total-t1,sm=Math.max(0,cons-total);st+=`<p class="note" style="margin:0 0 10px">La casa consumió ${f1(cons)} kWh: ${f1(t1)} en los circuitos del tablero 1${(d.t2||[]).length?`, ${f1(t2)} en los del tablero 2`:""} y ${f1(sm)} kWh sin medir (${cons?Math.round(sm/cons*100):0} %).</p>`}
+  const GS=[...GROUPS].sort((a,b)=>g[b.key]-g[a.key]);
   st+=`<div class="stack">`;
-  GROUPS.forEach(x=>{if(g[x.key]>0)st+=`<span style="width:${g[x.key]/total*100}%;background:${x.color}" title="${x.label}: ${f2(g[x.key])} kWh"></span>`});
+  GS.forEach(x=>{if(g[x.key]>0)st+=`<span style="width:${g[x.key]/total*100}%;background:${x.color}" title="${x.label}: ${f2(g[x.key])} kWh"></span>`});
   st+=`</div><div class="grp-legend" style="margin-top:10px">`;
   st+=`<div class="grp-row grp-head"><span>Tipo de carga</span><span></span><span class="num">kWh</span><span class="num">%</span></div>`;
-  GROUPS.forEach(x=>{const p=total?g[x.key]/total*100:0;st+=`<div class="grp-row${g[x.key]<0.0005?" zero":""}"><span class="gname"><i style="background:${x.color}"></i>${x.label}</span><span class="gbar"><span style="width:${p}%;background:${x.color}"></span></span><span class="num">${f2(g[x.key])}</span><span class="num">${Math.round(p)} %</span></div>`});
+  GS.forEach(x=>{const p=total?g[x.key]/total*100:0;st+=`<div class="grp-row${g[x.key]<0.0005?" zero":""}"><span class="gname"><i style="background:${x.color}"></i>${x.label}</span><span class="gbar"><span style="width:${p}%;background:${x.color}"></span></span><span class="num">${f2(g[x.key])}</span><span class="num">${Math.round(p)} %</span></div>`});
   gb.innerHTML=st+"</div>";
   const box=document.getElementById("circuits");box.innerHTML="";
   rows.forEach(([n,v])=>{
