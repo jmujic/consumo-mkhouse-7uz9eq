@@ -572,6 +572,72 @@
     "Inversor 1": 24.384,
     "Inversor 2": 24.311
    }
+  },
+  "2026-10-21": {
+   "fecha": "2026-10-21",
+   "red": 55.759,
+   "exportado": 12.017,
+   "total": 67.444,
+   "saldo": 23.713,
+   "parcial": false,
+   "capturado": "2026-10-22T01:51:27-05:00",
+   "solar": {
+    "v1": 55.1,
+    "v2": 42.2
+   },
+   "circuitos": {
+    "AA Closet Ppal": 19.296,
+    "AA Closet": 16.871,
+    "AA Hab. Dany": 7.854,
+    "AA Hab. Ppal": 5.883,
+    "no se sabe 2x30": 4.696,
+    "Refrigerador lavandería": 3.712,
+    "AA Hab. Omi": 3.127,
+    "Horno": 2.822,
+    "Secadora": 2.74,
+    "Hidroneumático": 0.379,
+    "AA Hab. Marita": 0.064,
+    "AA Sala": 0.0,
+    "AA Cuarto de servicio": 0.0,
+    "Congelador": 0.0,
+    "no se sabe": 0.0
+   },
+   "circuitos2": {
+    "Alumbrado Control On/Off (Cocina, Sala, Comedor)": 8.784,
+    "Contacto vestidor principal": 8.651,
+    "Alumbrado sala": 4.941,
+    "Refrigerador 1 Cocina": 2.963,
+    "Contactos (pastilla 8)": 2.878,
+    "Refrigerador 2 cocina": 2.776,
+    "Alumbrado y contactos Cuarto Dani": 2.674,
+    "Contactos (pastilla 10)": 1.934,
+    "Contactos site 2": 1.394,
+    "Parrilla, Campana, Barra Cocina": 1.296,
+    "Contactos TV Sala": 0.95,
+    "Contacto cuarto Omi": 0.874,
+    "Alumbrado y contactos en sala de servicio cuarto Marita": 0.646,
+    "Cafetera cocina": 0.423,
+    "Contactos sala": 0.409,
+    "Alumbrado Control DALI (Cocina, Sala, Comedor)": 0.346,
+    "Contacto coffe station comedor": 0.245,
+    "Alumbrado Cuarto Omi": 0.219,
+    "Alumbrado, Ventilador de Recámara Principal, closet, Área de juegos y Salita": 0.191,
+    "Baño Marita": 0.164,
+    "Contactos Lavandería cable 1": 0.133,
+    "Microondas cocina": 0.032,
+    "Contacto exterior terraza 1": 0.027,
+    "Contactos lavandería cable 2": 0.009,
+    "Lavavajillas": 0.004,
+    "Contacto exterior terraza 2": 0.002,
+    "Contacto Clóset Omi cable 1": 0.0,
+    "Contacto Clóset Omi cable 2": 0.0,
+    "Hornos cocina": 0.0,
+    "Área de luces tocador vestidor y cuarto principal": 0.0
+   },
+   "inversores_emporia": {
+    "Inversor 1": 21.466,
+    "Inversor 2": 21.402
+   }
   }
  },
  "analisis": {
@@ -717,6 +783,18 @@
     "Tablero 2: 44.0 kWh, el más alto desde que se mide; Contacto vestidor principal más que duplicó su consumo (9.0 kWh, contra 3.5 el día 19) y Alumbrado Control On/Off marcó 9.2 kWh.",
     "Del consumo de la casa, 83.1 kWh pasaron por el tablero 1, 44.0 por el tablero 2 y unos 48.0 kWh (27 %) no los mide ningún sensor.",
     "Últimos 7 días (14 al 20 de octubre): 131 kWh/día de consumo, 70 kWh/día de paneles (54 % del consumo) y 61 kWh/día netos con CFE; a ese ritmo el bimestre sería de unos 3,600 kWh netos."
+   ]
+  },
+  "2026-10-21": {
+   "fecha": "2026-10-21",
+   "resumen": "Buen día: los paneles produjeron 97.3 kWh, 4 % arriba del promedio de octubre, y cubrieron el 69 % de los 141.0 kWh que consumió la casa. Se tomaron 55.8 kWh de la red y se enviaron 12.0 kWh, así que el neto con CFE fue de 43.7 kWh, el más bajo desde el día 18.",
+   "puntos": [
+    "Paneles: 55.1 kWh el S. Fotovoltaico 1 y 42.2 kWh el S. Fotovoltaico 2; 85.3 kWh se usaron directo en la casa.",
+    "Tablero 1: 67.4 kWh; los aires sumaron 53.1 kWh. AA Closet bajó a 16.9 kWh (42.0 el día 20) y AA Hab. Omi volvió a encenderse (3.1 kWh) después de ocho días apagado.",
+    "«no se sabe 2x30» subió a 4.7 kWh, 50 % arriba de los 3.1 kWh diarios que marcaba; el Horno usó 2.8 kWh.",
+    "Tablero 2: 43.0 kWh, casi igual que el día 20; los mayores fueron Alumbrado Control On/Off (8.8), Contacto vestidor principal (8.7) y Alumbrado sala (4.9).",
+    "Del consumo de la casa, 67.4 kWh pasaron por el tablero 1, 43.0 por el tablero 2 y unos 30.6 kWh (22 %) no los mide ningún sensor.",
+    "Últimos 7 días (15 al 21 de octubre): 129 kWh/día de consumo, 74 kWh/día de paneles (57 % del consumo) y 55 kWh/día netos con CFE; a ese ritmo el bimestre sería de unos 3,300 kWh netos."
    ]
   }
  },
@@ -1312,13 +1390,13 @@
    "v2": 1653.3
   },
   "2026-10": {
-   "hasta": "2026-10-20",
+   "hasta": "2026-10-21",
    "mes": "2026-10",
    "nota_captura": "Acumulado del 1 al 7 de octubre leído de Growatt; la tarea diaria suma cada día a partir del 8.",
    "parcial": true,
-   "total": 1869.0,
-   "v1": 1002.0,
-   "v2": 867.0
+   "total": 1966.3,
+   "v1": 1057.1,
+   "v2": 909.2
   }
  },
  "solar_plantas": {
