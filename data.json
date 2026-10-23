@@ -800,66 +800,71 @@
    "resumen": "Día muy nublado o lluvioso: los paneles produjeron solo 26.6 kWh, el día más bajo del mes, y cubrieron el 28 % de los 95.0 kWh que consumió la casa. Se tomaron 70.9 kWh de la red y se enviaron 2.6 kWh, así que el neto con CFE fue de 68.4 kWh.",
    "puntos": [
     "Paneles: 15.3 kWh el S. Fotovoltaico 1 y 11.3 kWh el S. Fotovoltaico 2, los dos por debajo de 25 kWh y en la misma proporción: fue el clima, no una falla.",
-    "El consumo de la casa fue el más bajo desde que se mide: AA Sala estuvo apagado y AA Closet (12.5 kWh) y AA Hab. Ppal (2.6 kWh) trabajaron mucho menos que su promedio.",
-    "AA Closet Ppal fue el mayor (19.8 kWh). Del consumo de la casa, 50.0 kWh pasaron por el tablero 1, 20.7 por el tablero 2 y unos 24.2 kWh (26 %) no los mide ningún sensor.",
-    "Primer día con lecturas del segundo tablero: sus circuitos sumaron 20.7 kWh; los mayores fueron Alumbrado Control On/Off (7.4) y Alumbrado sala (3.7). Emporia reportó «Uso Total» igual al neto y el «Saldo» (18.3 kWh) como lo que no miden los circuitos del tablero 1.",
+    "Con los dos tableros, el consumo de la casa se repartió así: aires 41.2 kWh (43 %), alumbrado 13.3 (14 %), refrigeración 6.1 (6 %), contactos 3.3 (3 %), horno y cocina 1.6 (2 %) y lavandería, hidroneumático y «no se sabe 2x30» 5.2 (6 %). Quedan 24.2 kWh (26 %) que ningún sensor mide todavía.",
+    "Fue el consumo más bajo desde que se mide: AA Sala y AA Hab. Omi estuvieron apagados, y AA Closet (12.5 kWh contra 36.7 de promedio) y AA Hab. Ppal (2.6 contra 9.4) trabajaron mucho menos.",
+    "Circuitos mayores del día: AA Closet Ppal (19.8), AA Closet (12.5), Alumbrado Control On/Off (7.4), AA Hab. Dany (6.2) y Alumbrado sala (3.7). Es el primer día con los dos tableros medidos; desde aquí se comparan los días.",
     "Últimos 7 días (10 al 16 de octubre): 174 kWh/día de consumo, 88 kWh/día de paneles (50 % del consumo) y 87 kWh/día netos con CFE; a ese ritmo el bimestre sería de unos 5,200 kWh netos."
    ]
   },
   "2026-10-17": {
    "fecha": "2026-10-17",
-   "resumen": "La casa consumió 125.5 kWh y los paneles produjeron 62.0 kWh, el 49 % del consumo. Se tomaron 74.6 kWh de la red y se enviaron 11.1 kWh, así que el neto con CFE fue de 63.5 kWh.",
+   "resumen": "La casa consumió 125.5 kWh y los paneles produjeron 62.0 kWh, el 49 % del consumo. Se tomaron 74.6 kWh de la red y se enviaron 11.1 kWh, así que el neto con CFE fue de 63.5 kWh. El consumo fue 32 % mayor que el del día 16 (95.0 kWh), el primero con los dos tableros medidos.",
    "puntos": [
     "Paneles: 35.2 kWh el S. Fotovoltaico 1 y 26.8 kWh el S. Fotovoltaico 2, todavía 36 % debajo del promedio de octubre por las nubes.",
-    "Los aires sumaron 52.6 kWh: AA Closet Ppal (27.1) y AA Closet (18.1) concentraron casi todo; AA Sala, AA Hab. Omi y AA Hab. Marita estuvieron prácticamente apagados.",
-    "Tablero 2: 28.9 kWh; los mayores fueron Alumbrado Control On/Off (5.9), Alumbrado sala (3.6), Contacto vestidor principal (3.3) y los dos refrigeradores de la cocina (4.2 juntos).",
-    "Del consumo de la casa, 61.7 kWh pasaron por el tablero 1, 28.9 por el tablero 2 y unos 35.0 kWh (28 %) todavía no los mide ningún sensor.",
-    "«no se sabe 2x30» sigue estable en 3.0 kWh diarios."
+    "Con los dos tableros, el consumo de la casa se repartió así: aires 52.6 kWh (42 %), alumbrado 12.7 (10 %), contactos 10.6 (8 %), refrigeración 7.5 (6 %), horno y cocina 1.4 (1 %) y lavandería, hidroneumático y «no se sabe 2x30» 5.7 (5 %). Quedan 35.0 kWh (28 %) que ningún sensor mide todavía.",
+    "Los aires subieron 11.4 kWh sobre el día 16: AA Closet Ppal (27.1) y AA Closet (18.1) concentraron casi todo; AA Sala, AA Hab. Omi y AA Hab. Marita siguieron prácticamente apagados.",
+    "Los contactos pasaron de 3.3 a 10.6 kWh; el Contacto vestidor principal, que el día 16 no marcó, usó 3.3 kWh.",
+    "Circuitos mayores del día: AA Closet Ppal (27.1), AA Closet (18.1), AA Hab. Dany (6.3), Alumbrado Control On/Off (5.9) y Alumbrado sala (3.6). «no se sabe 2x30» sigue estable en 3.0 kWh.",
+    "Últimos 7 días (11 al 17 de octubre): 167 kWh/día de consumo, 79 kWh/día de paneles (47 % del consumo) y 88 kWh/día netos con CFE; a ese ritmo el bimestre sería de unos 5,300 kWh netos."
    ]
   },
   "2026-10-18": {
    "fecha": "2026-10-18",
-   "resumen": "El mejor día desde que se mide: la casa consumió 108.9 kWh y los paneles produjeron 95.9 kWh, el 88 % del consumo. Solo se tomaron 33.2 kWh de la red y se enviaron 20.2 kWh, así que el neto con CFE fue de apenas 13.0 kWh.",
+   "resumen": "El mejor día desde que se mide: la casa consumió 108.9 kWh y los paneles produjeron 95.9 kWh, el 88 % del consumo. Solo se tomaron 33.2 kWh de la red y se enviaron 20.2 kWh, así que el neto con CFE fue de apenas 13.0 kWh. El consumo fue 1 % menor que el promedio desde que se miden los dos tableros (110.2 kWh del 16 y 17).",
    "puntos": [
     "Paneles: 54.4 kWh el S. Fotovoltaico 1 y 41.5 kWh el S. Fotovoltaico 2; volvió el sol después de cuatro días nublados.",
+    "Con los dos tableros, el consumo de la casa se repartió así: aires 49.5 kWh (46 %), alumbrado 8.8 (8 %), refrigeración 7.7 (7 %), contactos 5.6 (5 %), horno y cocina 1.3 (1 %) y lavandería, hidroneumático y «no se sabe 2x30» 6.0 (6 %). Quedan 29.9 kWh (27 %) que ningún sensor mide todavía.",
     "Los aires sumaron 49.5 kWh; AA Closet Ppal fue el mayor (28.6 kWh) y AA Hab. Ppal, AA Sala y AA Hab. Omi no trabajaron.",
-    "Tablero 2: 20.9 kWh; los mayores fueron Alumbrado Control On/Off (3.3), Refrigerador 2 cocina (2.7), Alumbrado sala (2.3) y Alumbrado y contactos Cuarto Dani (2.0).",
-    "Del consumo de la casa, 58.1 kWh pasaron por el tablero 1, 20.9 por el tablero 2 y unos 29.9 kWh (27 %) todavía no los mide ningún sensor.",
+    "El alumbrado bajó a 8.8 kWh (13.0 de promedio): el Alumbrado Control On/Off de cocina, sala y comedor marcó 3.3 kWh, la mitad que los días anteriores.",
+    "Circuitos mayores del día: AA Closet Ppal (28.6), AA Closet (13.9), AA Hab. Dany (6.9), Refrigerador lavandería (3.5) y Alumbrado Control On/Off (3.3).",
     "El consumo bajó de unos 200 kWh/día (9 al 12 de octubre) a unos 110 kWh/día (16 al 18), sobre todo porque varios aires dejaron de usarse.",
     "Últimos 7 días (12 al 18 de octubre): 148 kWh/día de consumo, 80 kWh/día de paneles (54 % del consumo) y 68 kWh/día netos con CFE; a ese ritmo el bimestre sería de unos 4,100 kWh netos."
    ]
   },
   "2026-10-19": {
    "fecha": "2026-10-19",
-   "resumen": "Día nublado: los paneles produjeron 44.0 kWh, 54 % menos que el promedio de octubre, y cubrieron el 38 % de los 114.8 kWh que consumió la casa. Se tomaron 72.3 kWh de la red y se enviaron 1.5 kWh, así que el neto con CFE fue de 70.8 kWh.",
+   "resumen": "Día nublado: los paneles produjeron 44.0 kWh, 54 % menos que el promedio de octubre, y cubrieron el 38 % de los 114.8 kWh que consumió la casa. Se tomaron 72.3 kWh de la red y se enviaron 1.5 kWh, así que el neto con CFE fue de 70.8 kWh. El consumo fue 5 % mayor que el promedio desde que se miden los dos tableros (109.8 kWh del 16 al 18).",
    "puntos": [
     "Paneles: 24.8 kWh el S. Fotovoltaico 1 y 19.2 kWh el S. Fotovoltaico 2, los dos por debajo de 25 kWh y en la misma proporción: fue el clima.",
-    "Tablero 1: 60.9 kWh; los aires sumaron 51.4 kWh, sobre todo AA Closet Ppal (22.1) y AA Closet (18.9).",
-    "Tablero 2: 34.9 kWh, el más alto desde que se mide; subieron Alumbrado Control On/Off (8.3 kWh, contra 3.3 el día 18) y Contacto vestidor principal (3.5 kWh).",
-    "Del consumo de la casa, 60.9 kWh pasaron por el tablero 1, 34.9 por el tablero 2 y unos 19.0 kWh (17 %) no los mide ningún sensor.",
+    "Con los dos tableros, el consumo de la casa se repartió así: aires 51.4 kWh (45 %), alumbrado 15.6 (14 %), contactos 10.4 (9 %), refrigeración 9.6 (8 %), horno y cocina 2.0 (2 %) y lavandería, hidroneumático y «no se sabe 2x30» 6.8 (6 %). Quedan 19.0 kWh (16 %) que ningún sensor mide todavía.",
+    "Subieron el alumbrado (15.6 kWh, 4.0 más que su promedio) y los contactos (10.4 kWh, 3.9 más); los aires sumaron 51.4 kWh, sobre todo AA Closet Ppal (22.1) y AA Closet (18.9).",
+    "El Alumbrado Control On/Off de cocina, sala y comedor marcó 8.3 kWh (3.3 el día 18) y el Contacto vestidor principal 3.5 kWh.",
+    "Circuitos mayores del día: AA Closet Ppal (22.1), AA Closet (18.9), Alumbrado Control On/Off (8.3), AA Hab. Dany (6.7) y Alumbrado sala (4.1).",
     "Últimos 7 días (13 al 19 de octubre): 133 kWh/día de consumo, 70 kWh/día de paneles (53 % del consumo) y 63 kWh/día netos con CFE; a ese ritmo el bimestre sería de unos 3,800 kWh netos."
    ]
   },
   "2026-10-20": {
    "fecha": "2026-10-20",
-   "resumen": "Buen día de sol: los paneles produjeron 111.3 kWh, 20 % arriba del promedio de octubre, y cubrieron el 64 % de los 175.0 kWh que consumió la casa. Se tomaron 72.7 kWh de la red y se enviaron 9.0 kWh, así que el neto con CFE fue de 63.7 kWh.",
+   "resumen": "Buen día de sol: los paneles produjeron 111.3 kWh, 20 % arriba del promedio de octubre, y cubrieron el 64 % de los 175.0 kWh que consumió la casa. Se tomaron 72.7 kWh de la red y se enviaron 9.0 kWh, así que el neto con CFE fue de 63.7 kWh. El consumo fue 58 % mayor que el promedio desde que se miden los dos tableros (111.0 kWh del 16 al 19).",
    "puntos": [
     "Paneles: 63.4 kWh el S. Fotovoltaico 1 y 47.9 kWh el S. Fotovoltaico 2; 102.3 kWh se usaron directo en la casa.",
-    "Tablero 1: 83.1 kWh; los aires sumaron 71.9 kWh y AA Closet volvió a subir (42.0 kWh, contra 18.9 el día 19).",
-    "Tablero 2: 44.0 kWh, el más alto desde que se mide; Contacto vestidor principal más que duplicó su consumo (9.0 kWh, contra 3.5 el día 19) y Alumbrado Control On/Off marcó 9.2 kWh.",
-    "Del consumo de la casa, 83.1 kWh pasaron por el tablero 1, 44.0 por el tablero 2 y unos 48.0 kWh (27 %) no los mide ningún sensor.",
+    "Con los dos tableros, el consumo de la casa se repartió así: aires 71.9 kWh (41 %), alumbrado 17.2 (10 %), contactos 17.1 (10 %), refrigeración 9.4 (5 %), horno y cocina 4.7 (3 %) y lavandería, hidroneumático y «no se sabe 2x30» 6.7 (4 %). Quedan 48.0 kWh (27 %) que ningún sensor mide todavía.",
+    "Los aires pusieron 23.2 kWh más que su promedio, casi todo por AA Closet (42.0 kWh, contra 18.9 el día 19).",
+    "Los contactos subieron a 17.1 kWh (7.5 de promedio) porque el Contacto vestidor principal marcó 9.0 kWh (3.5 el día 19); el alumbrado llegó a 17.2 kWh y horno y cocina a 4.7, casi el triple de su promedio.",
+    "Circuitos mayores del día: AA Closet (42.0), AA Closet Ppal (19.6), Alumbrado Control On/Off (9.2), Contacto vestidor principal (9.0) y AA Hab. Dany (7.6).",
     "Últimos 7 días (14 al 20 de octubre): 131 kWh/día de consumo, 70 kWh/día de paneles (54 % del consumo) y 61 kWh/día netos con CFE; a ese ritmo el bimestre sería de unos 3,600 kWh netos."
    ]
   },
   "2026-10-21": {
    "fecha": "2026-10-21",
-   "resumen": "Buen día: los paneles produjeron 97.3 kWh, 4 % arriba del promedio de octubre, y cubrieron el 69 % de los 141.0 kWh que consumió la casa. Se tomaron 55.8 kWh de la red y se enviaron 12.0 kWh, así que el neto con CFE fue de 43.7 kWh, el más bajo desde el día 18.",
+   "resumen": "Buen día: los paneles produjeron 97.3 kWh, 4 % arriba del promedio de octubre, y cubrieron el 69 % de los 141.0 kWh que consumió la casa. Se tomaron 55.8 kWh de la red y se enviaron 12.0 kWh, así que el neto con CFE fue de 43.7 kWh, el más bajo desde el día 18. El consumo fue 14 % mayor que el promedio desde que se miden los dos tableros (123.8 kWh del 16 al 20).",
    "puntos": [
     "Paneles: 55.1 kWh el S. Fotovoltaico 1 y 42.2 kWh el S. Fotovoltaico 2; 85.3 kWh se usaron directo en la casa.",
-    "Tablero 1: 67.4 kWh; los aires sumaron 53.1 kWh. AA Closet bajó a 16.9 kWh (42.0 el día 20) y AA Hab. Omi volvió a encenderse (3.1 kWh) después de ocho días apagado.",
+    "Con los dos tableros, el consumo de la casa se repartió así: aires 53.1 kWh (38 %), alumbrado 17.8 (12 %), contactos 17.3 (12 %), refrigeración 9.5 (7 %), horno y cocina 4.8 (3 %) y lavandería, hidroneumático y «no se sabe 2x30» 8.0 (6 %). Quedan 30.6 kWh (22 %) que ningún sensor mide todavía.",
+    "Los aires quedaron en su promedio (53.1 kWh): AA Closet bajó a 16.9 kWh (42.0 el día 20) y AA Hab. Omi volvió a encenderse (3.1 kWh) después de ocho días apagado.",
+    "Contactos (17.3 kWh) y alumbrado (17.8 kWh) siguen altos contra su promedio (9.4 y 13.5) por el Contacto vestidor principal (8.7) y el Alumbrado Control On/Off (8.8).",
     "«no se sabe 2x30» subió a 4.7 kWh, 50 % arriba de los 3.1 kWh diarios que marcaba; el Horno usó 2.8 kWh.",
-    "Tablero 2: 43.0 kWh, casi igual que el día 20; los mayores fueron Alumbrado Control On/Off (8.8), Contacto vestidor principal (8.7) y Alumbrado sala (4.9).",
-    "Del consumo de la casa, 67.4 kWh pasaron por el tablero 1, 43.0 por el tablero 2 y unos 30.6 kWh (22 %) no los mide ningún sensor.",
+    "Circuitos mayores del día: AA Closet Ppal (19.3), AA Closet (16.9), Alumbrado Control On/Off (8.8), Contacto vestidor principal (8.7) y AA Hab. Dany (7.9).",
     "Últimos 7 días (15 al 21 de octubre): 129 kWh/día de consumo, 74 kWh/día de paneles (57 % del consumo) y 55 kWh/día netos con CFE; a ese ritmo el bimestre sería de unos 3,300 kWh netos."
    ]
   },
