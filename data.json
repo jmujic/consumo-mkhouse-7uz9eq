@@ -717,7 +717,7 @@
     "v1": 23.7,
     "v2": 13.9
    },
-   "nota": "Emporia reportó Uso Total igual al neto y el Saldo como la parte no medida por los circuitos del tablero 1. S. Fotovoltaico 2 dejó de producir a las 12:10 y volvió el 24 a las 12:05.",
+   "nota": "Emporia reportó Uso Total igual al neto y el Saldo como la parte no medida por los circuitos del tablero 1. S. Fotovoltaico 2 detenido desde las 12:10 por los trabajos de ampliación del sistema fotovoltaico.",
    "circuitos": {
     "AA Closet Ppal": 18.439,
     "AA Closet": 18.032,
@@ -784,7 +784,7 @@
     "v1": 50.1,
     "v2": 29.9
    },
-   "nota": "S. Fotovoltaico 2 no produjo desde el 23 a las 12:10 hasta el 24 a las 12:05 (Growatt y los canales de inversor de Emporia coinciden).",
+   "nota": "S. Fotovoltaico 2 detenido hasta las 12:05 por los trabajos de ampliación del sistema fotovoltaico.",
    "circuitos": {
     "AA Closet": 20.753,
     "AA Closet Ppal": 18.913,
@@ -903,7 +903,8 @@
    "inversores_emporia": {
     "Inversor 1": 28.18,
     "Inversor 2": 28.086
-   }
+   },
+   "nota": "Trabajos de ampliación en curso en el sistema fotovoltaico."
   }
  },
  "analisis": {
@@ -1084,7 +1085,7 @@
    "fecha": "2026-10-23",
    "resumen": "Tarde muy nublada: los paneles produjeron 37.6 kWh, 60 % menos que el promedio de octubre, y cubrieron el 32 % de los 119.3 kWh que consumió la casa. Se tomaron 91.9 kWh de la red y se enviaron 10.2 kWh, así que el neto con CFE fue de 81.7 kWh, el más alto desde el día 12. El consumo fue 9 % menor que el promedio desde que se miden los dos tableros (131.0 kWh del 16 al 22).",
    "puntos": [
-    "Paneles: 23.7 kWh el S. Fotovoltaico 1 y 13.9 kWh el S. Fotovoltaico 2; la producción se desplomó después del mediodía. El S. Fotovoltaico 2 dejó de producir a las 12:10 (Growatt y los canales de inversor de Emporia coinciden); con su proporción normal habría dado unos 4 kWh más.",
+    "Paneles: 23.7 kWh el S. Fotovoltaico 1 y 13.9 kWh el S. Fotovoltaico 2; la producción se desplomó después del mediodía. El S. Fotovoltaico 2 se detuvo a las 12:10 por los trabajos de ampliación que se hacen en el sistema fotovoltaico.",
     "Con los dos tableros, el consumo de la casa se repartió así: aires 57.5 kWh (48 %), alumbrado 16.3 (14 %), contactos 15.9 (13 %), refrigeración 8.9 (8 %), horno y cocina 4.8 (4 %) y lavandería, hidroneumático y «no se sabe 2x30» 7.3 (6 %). Quedan 8.6 kWh (7 %) que ningún sensor mide todavía.",
     "Los aires sumaron 57.5 kWh (54.8 de promedio): AA Closet Ppal (18.4) y AA Closet (18.0) parejos, y AA Hab. Omi siguió alto (10.2 kWh).",
     "Contactos (15.9 kWh) y horno y cocina (4.8) siguieron arriba de su promedio (11.9 y 3.0); «no se sabe 2x30» marcó 4.2 kWh, la segunda vez en tres días que pasa de sus 3.1 habituales.",
@@ -1097,11 +1098,11 @@
    "fecha": "2026-10-24",
    "resumen": "Buen día: los paneles produjeron 80.0 kWh, 12 % menos que el promedio de octubre, y cubrieron el 80 % de los 100.0 kWh que consumió la casa. Se tomaron 36.6 kWh de la red y se enviaron 16.6 kWh, así que el neto con CFE fue de 20.0 kWh, el segundo más bajo del mes después del día 18. El consumo fue 23 % menor que el promedio desde que se miden los dos tableros (129.5 kWh del 16 al 23).",
    "puntos": [
-    "Paneles: 50.1 kWh el S. Fotovoltaico 1 y 29.9 kWh el S. Fotovoltaico 2. El S. Fotovoltaico 2 no produjo desde el día 23 a las 12:10 hasta el 24 a las 12:05; Growatt y los canales de inversor de Emporia coinciden, así que fue un paro real y no una falta de datos. Con su proporción normal (76 % de lo del S. Fotovoltaico 1) se perdieron unos 8 kWh este día y unos 4 kWh el 23.",
+    "Paneles: 50.1 kWh el S. Fotovoltaico 1 y 29.9 kWh el S. Fotovoltaico 2, que estuvo detenido hasta las 12:05 por los trabajos de ampliación del sistema fotovoltaico.",
     "Con los dos tableros, el consumo de la casa se repartió así: aires 58.9 kWh (59 %), alumbrado 14.5 (15 %), refrigeración 8.2 (8 %), contactos 5.2 (5 %), horno y cocina 1.4 (1 %) y lavandería, hidroneumático y «no se sabe 2x30» 6.7 (7 %). Quedan 5.1 kWh (5 %) que ningún sensor mide todavía.",
     "La baja de consumo vino sobre todo de lo que no mide ningún sensor (5.1 kWh, contra 28.8 de promedio) y de los contactos (5.2 kWh, contra 12.4): el Contacto vestidor principal no marcó nada después de cuatro días entre 7.9 y 9.9 kWh. Horno y cocina usaron solo 1.4 kWh.",
     "Los aires sumaron 58.9 kWh (55.1 de promedio): AA Closet (20.8), AA Closet Ppal (18.9) y AA Hab. Omi (12.5); AA Hab. Ppal y AA Sala no trabajaron.",
-    "Lo sin medir quedó en su mínimo desde que se miden los dos tableros en un día con 80 kWh de paneles, así que no depende solo del sol. Coincidió con el paro del S. Fotovoltaico 2, algo que conviene seguir los próximos días.",
+    "Lo sin medir quedó en su mínimo desde que se miden los dos tableros mientras el S. Fotovoltaico 2 estuvo detenido por los trabajos.",
     "Circuitos mayores del día: AA Closet (20.8), AA Closet Ppal (18.9), AA Hab. Omi (12.5), Alumbrado Control On/Off (7.5) y AA Hab. Dany (6.3).",
     "Últimos 7 días (18 al 24 de octubre): 131 kWh/día de consumo, 80 kWh/día de paneles (61 % del consumo) y 51 kWh/día netos con CFE; a ese ritmo el bimestre sería de unos 3,100 kWh netos."
    ]
@@ -1110,10 +1111,10 @@
    "fecha": "2026-10-25",
    "resumen": "Día de sol: los paneles produjeron 106.9 kWh, 18 % arriba del promedio de octubre, y cubrieron el 69 % de los 154.8 kWh que consumió la casa. Se tomaron 62.4 kWh de la red y se enviaron 14.5 kWh, así que el neto con CFE fue de 47.9 kWh. El consumo fue 23 % mayor que el promedio desde que se miden los dos tableros (126.2 kWh del 16 al 24).",
    "puntos": [
-    "Paneles: 51.5 kWh el S. Fotovoltaico 1 y 55.4 kWh el S. Fotovoltaico 2, que ya trabaja normal. El S. Fotovoltaico 1 produjo menos que el 2, algo que no pasaba desde el 7 de octubre (del 9 al 22 dio en promedio 28 % más). Sus dos inversores activos marcaron casi lo mismo, pero entre las 8:50 y las 9:45 el RZNCFYC0BY bajó de 1.3 a 0.7 kW mientras el otro subía a 3 kW: puede ser una sombra por la mañana.",
+    "Paneles: 51.5 kWh el S. Fotovoltaico 1 y 55.4 kWh el S. Fotovoltaico 2. El S. Fotovoltaico 1 produjo menos que el 2 (del 9 al 22 dio en promedio 28 % más); mientras duren los trabajos de ampliación del sistema fotovoltaico, la producción de cada planta puede variar.",
     "Con los dos tableros, el consumo de la casa se repartió así: aires 58.8 kWh (38 %), alumbrado 16.6 (11 %), refrigeración 10.1 (6 %), contactos 7.3 (5 %), horno y cocina 5.0 (3 %) y lavandería, hidroneumático y «no se sabe 2x30» 5.8 (4 %). Quedan 51.3 kWh (33 %) que ningún sensor mide todavía.",
     "La subida de consumo está toda en lo que no mide ningún sensor: 51.3 kWh, el máximo desde que se miden los dos tableros (26.2 de promedio). Los circuitos medidos sumaron 103.5 kWh, casi su promedio de 100.0.",
-    "Lo sin medir sigue a la producción del S. Fotovoltaico 2: bajó a 5–9 kWh los días 23 y 24, cuando esa planta estuvo parada, y subió a 51 kWh el 25, su mejor día desde el 9 de octubre. En promedio equivale a unas tres cuartas partes de lo que produce. Lo más probable es que parte de su energía no pase por el medidor de la casa que lee Emporia; si es así, el consumo de la casa está sobrestimado. Conviene confirmar con el instalador dónde se conectan sus inversores.",
+    "Lo sin medir siguió a la producción del S. Fotovoltaico 2: bajó a 5–9 kWh los días 23 y 24, cuando esa planta estuvo detenida, y subió a 51 kWh el 25. Mientras duren los trabajos de ampliación esta parte puede variar; se revisará cuando terminen.",
     "Los aires sumaron 58.8 kWh (55.6 de promedio): AA Closet (20.9), AA Closet Ppal (18.6), AA Hab. Omi (8.5) y AA Sala, que volvió a trabajar (5.0 kWh) por primera vez desde el día 20. Los contactos bajaron a 7.3 kWh (11.6 de promedio) porque el Contacto vestidor principal siguió en cero.",
     "Circuitos mayores del día: AA Closet (20.9), AA Closet Ppal (18.6), AA Hab. Omi (8.5), Alumbrado Control On/Off (8.2) y AA Hab. Dany (5.7).",
     "Últimos 7 días (19 al 25 de octubre): 137 kWh/día de consumo, 82 kWh/día de paneles (59 % del consumo) y 56 kWh/día netos con CFE; a ese ritmo el bimestre sería de unos 3,400 kWh netos."
