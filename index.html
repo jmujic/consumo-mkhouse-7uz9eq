@@ -177,7 +177,7 @@ footer{color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);padd
 <div class="wrap">
   <header>
     <div>
-      <div class="eyebrow">Monitor Emporia · tablero LC Inversus</div>
+      <div class="eyebrow">Monitores Emporia · dos tableros</div>
       <h1>Consumo MK House</h1>
     </div>
     <div class="meta" id="meta">Cargando registros diarios…</div>
@@ -207,11 +207,11 @@ footer{color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);padd
       <div class="bim-grid" id="rs-bim"></div>
       <p class="note" id="rs-bim-n" style="margin-top:8px"></p>
     </div>
-    <div class="panel chart-box" id="rs-chart"><div class="empty">Desde el 9 de octubre aquí se ve cada día: consumo de la casa contra producción de los paneles.</div></div>
+    <div class="panel chart-box" id="rs-chart"><div class="empty">Desde el 8 de octubre aquí se ve cada día: consumo de la casa contra producción de los paneles.</div></div>
   </section>
 
   <section id="analisis">
-    <div class="sec-head"><h2 id="an-title">Análisis del día</h2><p id="an-sub">Lo escribe Claude cada mañana con el día anterior completo</p></div>
+    <div class="sec-head"><h2 id="an-title">Análisis del día</h2><p id="an-sub">Lo escribe Claude con cada día completo</p></div>
     <div class="panel" id="an-body"><div class="empty">El primer análisis aparece el viernes 9 de octubre por la mañana, con el día 8 completo.</div></div>
   </section>
 
@@ -246,7 +246,7 @@ footer{color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);padd
   </section>
 
   <section>
-    <div class="sec-head"><h2>Bitácora diaria</h2><p>Valores tal como los reporta Emporia, en kWh</p></div>
+    <div class="sec-head"><h2>Bitácora diaria</h2><p>Valores en kWh de Emporia y Growatt; «Sin medir» y «Consumo casa» se calculan</p></div>
     <div class="tbl-box"><table>
       <thead><tr><th>Fecha</th><th>Desde la red</th><th>Hacia la red</th><th>Suma circuitos</th><th>Sin medir</th><th>Solar</th><th>Consumo casa</th><th>Aires</th><th>Cocina</th><th>Mayor consumo</th></tr></thead>
       <tbody id="tbody"><tr><td colspan="10" style="text-align:center;color:var(--muted)">Sin registros.</td></tr></tbody>
@@ -313,8 +313,8 @@ footer{color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);padd
 </div>
 
   <footer>
-    <span>Fuente: web.emporiaenergy.com, vista «Día» del dispositivo LC Inversus. Seguimiento desde el 8 oct 2026: una tarea programada captura cada mañana el día anterior completo de Emporia y Growatt.</span>
-    <span>Consumo de la casa = comprado a CFE + paneles directo a la casa (producción de los paneles menos lo que se envió a la red). «Saldo» en la bitácora es el valor que reporta Emporia.</span>
+    <span>Fuente: monitores Emporia de los dos tableros (vista «Día», hora de Cancún) y Growatt para los paneles. Seguimiento desde el 8 oct 2026; el segundo tablero se mide desde el 16 oct. Cada día completo se carga al día siguiente.</span>
+    <span>Consumo de la casa = comprado a CFE + paneles directo a la casa (producción de los paneles menos lo que se envió a la red). «Sin medir» en la bitácora es el consumo de la casa menos la suma de los circuitos de los dos tableros.</span>
   </footer>
 </div>
 
@@ -552,7 +552,7 @@ let solarMes=[],plantas=[];
 const MESL=["ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"];
 function solarDia(date){const k=date.toISOString().slice(0,7);const m=solarMes.find(x=>x.mes===k);if(!m)return null;const [y,mm]=k.split("-").map(Number);let dim=new Date(y,mm,0).getDate();if(m.parcial&&m.hasta){const h=m.hasta.slice(0,10);if(date.toISOString().slice(0,10)>h)return null;dim=+h.slice(8,10)}return m.total/dim}
 function solarPeriodo(a,b){let x=new Date(a+"T12:00:00Z"),e=new Date(b+"T12:00:00Z"),s=0,ok=true;while(x<e){const v=solarDia(x);if(v==null)ok=false;else s+=v;x=new Date(x.getTime()+864e5)}return ok?s:null}
-function perdidas(){const out=[];const comp=solarMes.filter(m=>!m.parcial).slice(-12);comp.forEach(m=>{const [y,mm]=m.mes.split("-");const prev=solarMes.find(x=>x.mes===`${+y-1}-${mm}`);if(prev&&(m.causa||m.total<prev.total*0.85))out.push({mes:m.mes,actual:m.total,previo:prev.total,dif:prev.total-m.total,causa:m.causa||""})});return out}
+function perdidas(){const out=[];const comp=solarMes.filter(m=>!m.parcial).slice(-12);comp.forEach(m=>{const [y,mm]=m.mes.split("-");const prev=solarMes.find(x=>x.mes===`${+y-1}-${mm}`);if(prev&&(m.causa||m.total<prev.total*0.85))out.push({mes:m.mes,actual:m.total,previo:prev.total,dif:prev.total-m.total,causa:m.causa==="obra_parcial"?"obra":(m.causa||"")})});return out}
 
 function drawSolar(){
   if(!solarMes.length)return;
@@ -565,8 +565,8 @@ function drawSolar(){
   data.forEach((d,i)=>{const odd=d.parcial&&!d.calc;const [yy,mm]=d.mes.split("-");
     if(d.causa){
       const col=d.causa==="inversor"?"var(--warn)":"var(--muted)";
-      s+=`<rect x="${x(i)-bw/2+0.75}" y="${y(d.total)}" width="${bw-1.5}" height="${Math.max(1,y(0)-y(d.total))}" fill="${d.causa==="inversor"?"url(#hi)":"url(#ho)"}" stroke="${col}" stroke-width="1"><title>${MESL[mm-1]} ${yy} · ${f1(d.total)} kWh · ${d.causa==="obra"?"paneles apagados por obra":d.causa==="sitio"?"clima de la zona y probables paros al inicio de la obra":"inversor descompuesto y sustituido"}</title></rect>`;
-      s+=`<text x="${x(i)}" y="${y(d.total)-4}" text-anchor="middle" style="font-size:9px;fill:${col}">${d.causa==="obra"?"obra":d.causa==="sitio"?"zona":"inv."}</text>`;
+      s+=`<rect x="${x(i)-bw/2+0.75}" y="${y(d.total)}" width="${bw-1.5}" height="${Math.max(1,y(0)-y(d.total))}" fill="${d.causa==="inversor"?"url(#hi)":"url(#ho)"}" stroke="${col}" stroke-width="1"><title>${MESL[mm-1]} ${yy} · ${f1(d.total)} kWh · ${d.causa==="obra"?"paneles apagados por obra":d.causa==="obra_parcial"?"algunos días afectados por obra":d.causa==="sitio"?"clima de la zona y probables paros al inicio de la obra":"inversor descompuesto y sustituido"}</title></rect>`;
+      s+=`<text x="${x(i)}" y="${y(d.total)-4}" text-anchor="middle" style="font-size:9px;fill:${col}">${/^obra/.test(d.causa)?"obra":d.causa==="sitio"?"zona":"inv."}</text>`;
     } else if(d.calc){
       s+=`<rect x="${x(i)-bw/2+0.75}" y="${y(d.total)}" width="${bw-1.5}" height="${y(0)-y(d.total)}" fill="var(--solar-soft)" stroke="var(--solar)" stroke-width="1.5" stroke-dasharray="3 2"><title>${MESL[mm-1]} ${yy} · producción calculada: ${f1(d.total)} kWh (Growatt registró ${f1(d.g_total)})</title></rect>`;
       s+=`<line x1="${x(i)-bw/2}" x2="${x(i)+bw/2}" y1="${y(d.g_total)}" y2="${y(d.g_total)}" stroke="var(--ink)" stroke-width="2"><title>Growatt: ${f1(d.g_total)} kWh</title></line>`;

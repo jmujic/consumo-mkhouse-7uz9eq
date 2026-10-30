@@ -1180,7 +1180,7 @@
     "Los aires acondicionados sumaron 108.3 kWh, el 88 % de lo que miden los circuitos de Emporia; los que más pesaron fueron AA Closet (34.9 kWh) y AA Closet Ppal (20.2 kWh).",
     "De los 101.3 kWh solares, 71.2 kWh se usaron directo en la casa y 30.1 kWh salieron a la red.",
     "Producción en línea con el promedio de octubre (102 kWh/día del 1 al 7): 51.0 kWh el S. Fotovoltaico 1 y 50.3 kWh el S. Fotovoltaico 2.",
-    "Los circuitos medidos suman 122.8 kWh; los otros 26 kWh del consumo total son de un segundo tablero eléctrico que todavía no se mide y que se agregará pronto.",
+    "Los circuitos del tablero 1 suman 122.8 kWh; los otros 26.3 kWh no los medía ningún sensor (el segundo tablero se empezó a medir el 16 de octubre).",
     "El circuito «no se sabe 2x30» consumió 3.1 kWh: conviene identificar qué alimenta."
    ]
   },
@@ -1190,7 +1190,7 @@
    "puntos": [
     "AA Sala subió de 14.1 a 50.2 kWh (+256 %) y fue el 44 % de lo medido; los aires sumaron 103.4 kWh, el 91 % de los circuitos de Emporia.",
     "Los paneles dieron 124.9 kWh (68.4 el S. Fotovoltaico 1 y 56.5 el S. Fotovoltaico 2), 23 % arriba del promedio de octubre; 110.8 kWh se usaron directo en la casa y solo 14.1 salieron a la red.",
-    "Los circuitos medidos suman 113.8 kWh; los otros 87.6 kWh del consumo salieron del segundo tablero que todavía no se mide (el día 8 fueron 26 kWh).",
+    "Los circuitos del tablero 1 suman 113.8 kWh; los otros 87.6 kWh no los medía ningún sensor (el segundo tablero se empezó a medir el 16 de octubre).",
     "El circuito «no se sabe 2x30» volvió a consumir 3.2 kWh.",
     "Promedio de los dos días medidos: 175 kWh/día de consumo y 113 kWh/día de paneles."
    ]
@@ -1202,7 +1202,7 @@
     "AA Sala estuvo apagado todo el día (0.0 kWh, contra 50.2 el día 9) y AA Hab. Dany tampoco consumió.",
     "Los aires sumaron 83.3 kWh, el 90 % de lo medido; AA Closet (38.4 kWh) y AA Closet Ppal (22.7 kWh) fueron los mayores.",
     "Paneles: 68.1 kWh el S. Fotovoltaico 1 y 54.4 kWh el S. Fotovoltaico 2; 96.1 kWh se usaron directo en la casa.",
-    "Los circuitos medidos suman 92.9 kWh; unos 81.6 kWh salieron del segundo tablero que todavía no se mide.",
+    "Los circuitos del tablero 1 suman 92.9 kWh; los otros 81.6 kWh no los medía ningún sensor (el segundo tablero se empezó a medir el 16 de octubre).",
     "«no se sabe 2x30» consumió 3.2 kWh, igual que los días anteriores."
    ]
   },
@@ -1211,9 +1211,9 @@
    "resumen": "Día de consumo alto y poco sol: la casa consumió 245.2 kWh y los paneles produjeron 94.4 kWh, solo el 38 % del consumo. Se tomaron 153.3 kWh de la red y se enviaron 2.5 kWh, así que el neto con CFE fue de 150.8 kWh, el más alto desde que se mide.",
    "puntos": [
     "Lo tomado de la red (153.3 kWh) fue 86 % más que el promedio de los tres días anteriores (82.3 kWh).",
-    "AA Closet consumió 62.6 kWh, el doble de su promedio; AA Hab. Omi (22.6) y AA Hab. Marita (9.0) casi triplicaron el suyo, y AA Sala volvió a encenderse (25.8 kWh).",
+    "AA Closet consumió 62.6 kWh, el doble de su promedio; AA Hab. Omi (22.6) triplicó el suyo y AA Hab. Marita (9.0) casi lo triplicó, y AA Sala volvió a encenderse (25.8 kWh).",
     "Los paneles bajaron a 94.4 kWh (51.7 el S. Fotovoltaico 1 y 42.7 el S. Fotovoltaico 2), 11 % menos que el promedio de octubre: día con menos sol. Casi todo se usó en la casa.",
-    "Los circuitos medidos suman 158.9 kWh; unos 86.3 kWh salieron del segundo tablero.",
+    "Los circuitos del tablero 1 suman 158.9 kWh; los otros 86.3 kWh no los medía ningún sensor (el segundo tablero se empezó a medir el 16 de octubre).",
     "Promedio de los 4 días medidos: 193 kWh/día de consumo, 111 kWh/día de paneles y 82 kWh/día netos con CFE; a ese ritmo el bimestre sería de unos 4,900 kWh netos."
    ]
   },
@@ -1224,7 +1224,7 @@
     "Lo tomado de la red fue 18 % más que el promedio de los cuatro días anteriores (100.1 kWh).",
     "Los aires sumaron 113.6 kWh, el 92 % de lo medido; AA Sala fue el mayor (35.1 kWh) y AA Hab. Ppal (15.0) y AA Hab. Dany (5.9) estuvieron muy por encima de su promedio.",
     "Paneles: 61.5 kWh el S. Fotovoltaico 1 y 46.8 kWh el S. Fotovoltaico 2, en línea con octubre; casi todo (102.3 kWh) se usó directo en la casa.",
-    "Los circuitos medidos suman 123.1 kWh; unos 97.5 kWh salieron del segundo tablero que todavía no se mide.",
+    "Los circuitos del tablero 1 suman 123.1 kWh; los otros 97.5 kWh no los medía ningún sensor (el segundo tablero se empezó a medir el 16 de octubre).",
     "Promedio de los 5 días medidos: 198 kWh/día de consumo, 110 kWh/día de paneles y 88 kWh/día netos con CFE; a ese ritmo el bimestre sería de unos 5,300 kWh netos."
    ]
   },
@@ -1235,7 +1235,7 @@
     "AA Closet volvió a ser el mayor (53.5 kWh, 47 % arriba de su promedio) y AA Hab. Dany subió a 18.8 kWh, más de cinco veces su promedio.",
     "AA Hab. Omi estuvo apagado todo el día y AA Sala apenas consumió 4.0 kWh; los aires sumaron 113.5 kWh, el 90 % de lo medido.",
     "Paneles: 61.6 kWh el S. Fotovoltaico 1 y 50.0 kWh el S. Fotovoltaico 2, 6 % arriba del promedio de octubre; 101.7 kWh se usaron directo en la casa.",
-    "Los circuitos medidos suman 126.4 kWh; unos 62.7 kWh salieron del segundo tablero que todavía no se mide.",
+    "Los circuitos del tablero 1 suman 126.4 kWh; los otros 62.7 kWh no los medía ningún sensor (el segundo tablero se empezó a medir el 16 de octubre).",
     "Promedio de los 6 días medidos: 197 kWh/día de consumo, 111 kWh/día de paneles y 86 kWh/día netos con CFE; a ese ritmo el bimestre sería de unos 5,200 kWh netos."
    ]
   },
@@ -1246,7 +1246,7 @@
     "Paneles: 40.5 kWh el S. Fotovoltaico 1 y 32.2 kWh el S. Fotovoltaico 2, la baja se atribuye a los trabajos de ampliación que se hacen en el sistema fotovoltaico del 13 al 30 de octubre.",
     "El consumo de la casa fue el más bajo desde el día 8; los aires sumaron 86.3 kWh, el 85 % de lo medido.",
     "AA Hab. Dany sigue alto por segundo día (16.4 kWh, casi tres veces su promedio) y AA Hab. Omi estuvo apagado.",
-    "Los circuitos medidos suman 101.6 kWh; unos 52.7 kWh salieron del segundo tablero que todavía no se mide.",
+    "Los circuitos del tablero 1 suman 101.6 kWh; los otros 52.7 kWh no los medía ningún sensor (el segundo tablero se empezó a medir el 16 de octubre).",
     "Primera semana completa (8 al 14 de octubre): 191 kWh/día de consumo, 105 kWh/día de paneles (55 % del consumo) y 85 kWh/día netos con CFE; a ese ritmo el bimestre sería de unos 5,100 kWh netos."
    ]
   },
@@ -1257,7 +1257,7 @@
     "Paneles: 44.8 kWh el S. Fotovoltaico 1 y 34.7 kWh el S. Fotovoltaico 2, 22 % y 27 % debajo de su promedio; la baja se atribuye a los trabajos de ampliación del sistema fotovoltaico.",
     "El consumo de la casa (142.6 kWh) fue el más bajo de la serie: AA Sala, AA Hab. Marita y AA Hab. Omi casi no trabajaron.",
     "AA Hab. Dany sigue alto por tercer día: 12.5 kWh, 67 % arriba de su promedio de 7.4 kWh.",
-    "Los circuitos medidos suman 73.8 kWh; unos 68.9 kWh salieron del segundo tablero que todavía no se mide. «no se sabe 2x30» marcó 3.3 kWh, en línea con su promedio.",
+    "Los circuitos del tablero 1 suman 73.8 kWh; los otros 68.9 kWh no los medía ningún sensor (el segundo tablero se empezó a medir el 16 de octubre). «no se sabe 2x30» marcó 3.3 kWh, en línea con su promedio.",
     "Últimos 7 días (9 al 15 de octubre): 190 kWh/día de consumo, 102 kWh/día de paneles (54 % del consumo) y 88 kWh/día netos con CFE; a ese ritmo el bimestre sería de unos 5,300 kWh netos."
    ]
   },
