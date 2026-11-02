@@ -1237,6 +1237,66 @@
     "Inversor 2": 12.452
    },
    "nota": "Emporia reportó Uso Total igual al neto y el Saldo como la parte no medida por los circuitos del tablero 1. El monitor del tablero 2 dejó de reportar durante el día: sus circuitos de este día están incompletos."
+  },
+  "2026-10-31": {
+   "fecha": "2026-10-31",
+   "red": 123.792,
+   "exportado": 51.135,
+   "total": 113.075,
+   "saldo": 40.461,
+   "parcial": false,
+   "capturado": "2026-11-02T12:59:44-05:00",
+   "solar": {
+    "v1": 98.7,
+    "v2": 46.7
+   },
+   "circuitos": {
+    "AA Sala": 27.547,
+    "AA Closet": 26.525,
+    "AA Closet Ppal": 18.574,
+    "AA Hab. Omi": 9.92,
+    "AA Hab. Dany": 8.752,
+    "AA Hab. Ppal": 6.183,
+    "Horno": 6.007,
+    "no se sabe 2x30": 3.24,
+    "Secadora": 2.963,
+    "AA Hab. Marita": 2.881,
+    "Hidroneumático": 0.483,
+    "AA Cuarto de servicio": 0.001,
+    "Congelador": 0.0,
+    "no se sabe": 0.0
+   },
+   "nota": "El monitor del tablero 2 no registró datos este día. Refrigerador lavandería ya no aparece entre los circuitos del tablero 1."
+  },
+  "2026-11-01": {
+   "fecha": "2026-11-01",
+   "red": 59.946,
+   "exportado": 72.224,
+   "total": 85.007,
+   "saldo": 97.366,
+   "parcial": false,
+   "capturado": "2026-11-02T12:59:50-05:00",
+   "solar": {
+    "v1": 109.1,
+    "v2": 51.1
+   },
+   "circuitos": {
+    "AA Closet": 24.425,
+    "AA Closet Ppal": 18.93,
+    "AA Sala": 12.006,
+    "AA Hab. Omi": 10.459,
+    "AA Hab. Dany": 8.853,
+    "AA Hab. Ppal": 3.574,
+    "no se sabe 2x30": 3.272,
+    "Secadora": 2.058,
+    "AA Hab. Marita": 1.046,
+    "Hidroneumático": 0.344,
+    "Horno": 0.04,
+    "AA Cuarto de servicio": 0.0,
+    "Congelador": 0.0,
+    "no se sabe": 0.0
+   },
+   "nota": "El monitor del tablero 2 no registró datos este día. La casa envió a la red más de lo que tomó."
   }
  },
  "analisis": {
@@ -1514,6 +1574,27 @@
     "Refrigerador lavandería marcó 1.5 kWh, menos de la mitad de lo normal (3.7).",
     "Circuitos mayores del día: AA Closet (25.9), AA Closet Ppal (19.2), AA Hab. Dany (7.2), AA Hab. Omi (7.2) y AA Sala (5.0).",
     "Últimos 7 días (24 al 30 de octubre): 144 kWh/día de consumo, 87 kWh/día de paneles (60 % del consumo) y 57 kWh/día netos con CFE; a ese ritmo el bimestre sería de unos 3,400 kWh netos."
+   ]
+  },
+  "2026-10-31": {
+   "fecha": "2026-10-31",
+   "resumen": "Primer día con la ampliación: los paneles produjeron 145.4 kWh, el máximo del mes, y cubrieron el 67 % de los 218.1 kWh que consumió la casa, el tercer consumo más alto desde que se mide. Se tomaron 123.8 kWh de la red y se enviaron 51.1 kWh, así que el neto con CFE fue de 72.7 kWh.",
+   "puntos": [
+    "Paneles: 98.7 kWh el S. Fotovoltaico 1, que ya trabaja con dos inversores nuevos de 10 kW (ahora tiene cuatro activos), y 46.7 kWh el S. Fotovoltaico 2; 94.3 kWh se usaron directo en la casa y 51.1 se enviaron a la red.",
+    "El monitor del segundo tablero no registró nada este día, así que solo se conoce el tablero 1: sus circuitos sumaron 113.1 kWh y quedan 105.0 kWh sin medir, que incluyen todo el tablero 2.",
+    "Los aires sumaron 100.4 kWh, lo más alto desde el 13 de octubre: AA Sala 27.5 kWh (su mayor consumo desde el día 12), AA Closet 26.5, AA Closet Ppal 18.6 y AA Hab. Omi 9.9. El Horno usó 6.0 kWh, su mayor consumo desde que se mide.",
+    "Refrigerador lavandería ya no aparece entre los circuitos del tablero 1 en Emporia desde este día.",
+    "Últimos 7 días (25 al 31 de octubre): 160 kWh/día de consumo, 96 kWh/día de paneles (60 % del consumo) y 64 kWh/día netos con CFE; a ese ritmo el bimestre sería de unos 3,900 kWh netos."
+   ]
+  },
+  "2026-11-01": {
+   "fecha": "2026-11-01",
+   "resumen": "Por primera vez desde que se mide, la casa envió a la red más de lo que tomó: los paneles produjeron 160.2 kWh, el 108 % de los 147.9 kWh que consumió la casa. Se tomaron 59.9 kWh de la red y se enviaron 72.2 kWh, así que el neto con CFE quedó 12.3 kWh a favor de la casa.",
+   "puntos": [
+    "Paneles: 109.1 kWh el S. Fotovoltaico 1, más del doble de su promedio de octubre (48.0 kWh) gracias a los dos inversores nuevos, y 51.1 kWh el S. Fotovoltaico 2; 88.0 kWh se usaron directo en la casa.",
+    "El monitor del segundo tablero tampoco registró este día (volvió a conectarse el 2 de noviembre): el tablero 1 sumó 85.0 kWh y quedan 62.9 kWh sin medir, que incluyen todo el tablero 2.",
+    "Los aires sumaron 79.3 kWh: AA Closet (24.4), AA Closet Ppal (18.9), AA Sala (12.0) y AA Hab. Omi (10.5).",
+    "Últimos 7 días (26 de octubre al 1 de noviembre): 159 kWh/día de consumo, 104 kWh/día de paneles (65 % del consumo) y 56 kWh/día netos con CFE; a ese ritmo el bimestre sería de unos 3,300 kWh netos."
    ]
   }
  },
@@ -2109,13 +2190,22 @@
    "v2": 1653.3
   },
   "2026-10": {
-   "hasta": "2026-10-30",
+   "hasta": "2026-10-31",
    "mes": "2026-10",
    "nota_captura": "Acumulado del 1 al 7 de octubre leído de Growatt; la tarea diaria suma cada día a partir del 8.",
-   "parcial": true,
-   "total": 2704.9,
-   "v1": 1439.9,
-   "v2": 1265.0
+   "total": 2850.3,
+   "v1": 1538.6,
+   "v2": 1311.7,
+   "causa": "obra_parcial",
+   "nota": "Trabajos de ampliación del 13 al 30 de octubre; el 31 entraron dos inversores nuevos de 10 kW en S. Fotovoltaico 1."
+  },
+  "2026-11": {
+   "mes": "2026-11",
+   "v1": 109.1,
+   "v2": 51.1,
+   "total": 160.2,
+   "hasta": "2026-11-01",
+   "parcial": true
   }
  },
  "solar_plantas": {
@@ -2143,6 +2233,20 @@
      "modelo": "MIN 6000TL-X",
      "sn": "V1-B",
      "total_kwh": 40649.1
+    },
+    {
+     "estado": "En línea",
+     "kw": 10,
+     "sn": "V1-D",
+     "nota": "Ampliación: produce desde el 31 oct 2026",
+     "total_kwh": 90.2
+    },
+    {
+     "estado": "En línea",
+     "kw": 10,
+     "sn": "V1-E",
+     "nota": "Ampliación: produce desde el 31 oct 2026",
+     "total_kwh": 49.3
     }
    ],
    "kwp": 20.56,
