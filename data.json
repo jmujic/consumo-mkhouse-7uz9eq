@@ -1236,7 +1236,7 @@
     "Inversor 1": 12.387,
     "Inversor 2": 12.452
    },
-   "nota": "Emporia reportó Uso Total igual al neto y el Saldo como la parte no medida por los circuitos del tablero 1. El monitor del tablero 2 dejó de reportar durante el día: sus circuitos de este día están incompletos."
+   "nota": "Emporia reportó Uso Total igual al neto y el Saldo como la parte no medida por los circuitos del tablero 1. Trabajos en la medición de los tableros: el monitor del tablero 2 dejó de reportar durante el día."
   },
   "2026-10-31": {
    "fecha": "2026-10-31",
@@ -1266,7 +1266,7 @@
     "Congelador": 0.0,
     "no se sabe": 0.0
    },
-   "nota": "El monitor del tablero 2 no registró datos este día. Refrigerador lavandería ya no aparece entre los circuitos del tablero 1."
+   "nota": "Trabajos en la medición de los tableros: el tablero 2 no registró datos y Refrigerador lavandería dejó de aparecer en el tablero 1."
   },
   "2026-11-01": {
    "fecha": "2026-11-01",
@@ -1296,7 +1296,7 @@
     "Congelador": 0.0,
     "no se sabe": 0.0
    },
-   "nota": "El monitor del tablero 2 no registró datos este día. La casa envió a la red más de lo que tomó."
+   "nota": "Trabajos en la medición de los tableros: el tablero 2 no registró datos. La casa envió a la red más de lo que tomó."
   }
  },
  "analisis": {
@@ -1568,7 +1568,7 @@
    "resumen": "Producción baja en el último día de los trabajos de ampliación: los paneles produjeron 57.6 kWh, 37 % menos que el promedio de octubre, y cubrieron el 41 % de los 142.1 kWh que consumió la casa. Se tomaron 91.5 kWh de la red y se enviaron 7.1 kWh, así que el neto con CFE fue de 84.5 kWh, el más alto desde el día 12. El consumo fue 5 % mayor que el promedio desde que se miden los dos tableros (135.6 kWh del 16 al 29).",
    "puntos": [
     "Paneles: 28.5 kWh el S. Fotovoltaico 1 y 29.1 kWh el S. Fotovoltaico 2; 50.5 kWh se usaron directo en la casa.",
-    "El monitor del segundo tablero dejó de reportar durante el día y sigue sin conexión: sus circuitos solo registraron 13.1 kWh (unos 38 de promedio). El reparto de este día está incompleto y lo sin medir incluye lo que ese tablero no alcanzó a registrar.",
+    "Por los trabajos en la medición de los tableros, el monitor del segundo tablero dejó de reportar durante el día: sus circuitos solo registraron 13.1 kWh (unos 38 de promedio). El reparto de este día está incompleto y lo sin medir incluye lo que ese tablero no alcanzó a registrar.",
     "Con los dos tableros, el consumo de la casa se repartió así: aires 67.0 kWh (47 %), alumbrado 6.1 (4 %), refrigeración 4.1 (3 %), contactos 2.8 (2 %), horno y cocina 1.5 (1 %) y lavandería, hidroneumático y «no se sabe 2x30» 5.3 (4 %). Quedan 55.1 kWh (39 %) que ningún sensor mide todavía.",
     "Tablero 1 completo: los aires sumaron 67.0 kWh (57.4 de promedio), con AA Closet en 25.9 kWh, su mayor consumo desde el día 20, y AA Sala en 5.0 kWh.",
     "Refrigerador lavandería marcó 1.5 kWh, menos de la mitad de lo normal (3.7).",
@@ -1581,9 +1581,9 @@
    "resumen": "Primer día con la ampliación: los paneles produjeron 145.4 kWh, el máximo del mes, y cubrieron el 67 % de los 218.1 kWh que consumió la casa, el tercer consumo más alto desde que se mide. Se tomaron 123.8 kWh de la red y se enviaron 51.1 kWh, así que el neto con CFE fue de 72.7 kWh.",
    "puntos": [
     "Paneles: 98.7 kWh el S. Fotovoltaico 1, que ya trabaja con dos inversores nuevos de 10 kW (ahora tiene cuatro activos), y 46.7 kWh el S. Fotovoltaico 2; 94.3 kWh se usaron directo en la casa y 51.1 se enviaron a la red.",
-    "El monitor del segundo tablero no registró nada este día, así que solo se conoce el tablero 1: sus circuitos sumaron 113.1 kWh y quedan 105.0 kWh sin medir, que incluyen todo el tablero 2.",
+    "Por los trabajos en la medición de los tableros, el monitor del segundo tablero no registró nada este día, así que solo se conoce el tablero 1: sus circuitos sumaron 113.1 kWh y quedan 105.0 kWh sin medir, que incluyen todo el tablero 2.",
     "Los aires sumaron 100.4 kWh, lo más alto desde el 13 de octubre: AA Sala 27.5 kWh (su mayor consumo desde el día 12), AA Closet 26.5, AA Closet Ppal 18.6 y AA Hab. Omi 9.9. El Horno usó 6.0 kWh, su mayor consumo desde que se mide.",
-    "Refrigerador lavandería ya no aparece entre los circuitos del tablero 1 en Emporia desde este día.",
+    "Con los ajustes a la medición de los tableros, Refrigerador lavandería dejó de aparecer entre los circuitos del tablero 1.",
     "Últimos 7 días (25 al 31 de octubre): 160 kWh/día de consumo, 96 kWh/día de paneles (60 % del consumo) y 64 kWh/día netos con CFE; a ese ritmo el bimestre sería de unos 3,900 kWh netos."
    ]
   },
@@ -1592,7 +1592,7 @@
    "resumen": "Por primera vez desde que se mide, la casa envió a la red más de lo que tomó: los paneles produjeron 160.2 kWh, el 108 % de los 147.9 kWh que consumió la casa. Se tomaron 59.9 kWh de la red y se enviaron 72.2 kWh, así que el neto con CFE quedó 12.3 kWh a favor de la casa.",
    "puntos": [
     "Paneles: 109.1 kWh el S. Fotovoltaico 1, más del doble de su promedio de octubre (48.0 kWh) gracias a los dos inversores nuevos, y 51.1 kWh el S. Fotovoltaico 2; 88.0 kWh se usaron directo en la casa.",
-    "El monitor del segundo tablero tampoco registró este día (volvió a conectarse el 2 de noviembre): el tablero 1 sumó 85.0 kWh y quedan 62.9 kWh sin medir, que incluyen todo el tablero 2.",
+    "El monitor del segundo tablero tampoco registró este día por los trabajos en la medición de los tableros (volvió el 2 de noviembre): el tablero 1 sumó 85.0 kWh y quedan 62.9 kWh sin medir, que incluyen todo el tablero 2.",
     "Los aires sumaron 79.3 kWh: AA Closet (24.4), AA Closet Ppal (18.9), AA Sala (12.0) y AA Hab. Omi (10.5).",
     "Últimos 7 días (26 de octubre al 1 de noviembre): 159 kWh/día de consumo, 104 kWh/día de paneles (65 % del consumo) y 56 kWh/día netos con CFE; a ese ritmo el bimestre sería de unos 3,300 kWh netos."
    ]
