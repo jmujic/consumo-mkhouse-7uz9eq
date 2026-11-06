@@ -12,7 +12,7 @@
 /* Layout: tablero de lectura — resumen arriba, gráfica diaria, desglose por circuito, alertas y bitácora. Una columna ancha que se apila en teléfono. */
 :root{
   --bg:#f3f4f2; --surface:#ffffff; --ink:#1b1f22; --muted:#5f676b; --line:#d9ddda;
-  --grid:#c9a227; --grid-soft:#f1e3b0; --solar:#3f8f6b; --solar-2:#86b89c; --solar-soft:#cfe6da;
+  --grid:#c9a227; --grid-soft:#f1e3b0; --solar:#3f8f6b; --solar-2:#86b89c; --prod:#7fcf9f; --solar-soft:#cfe6da;
   --warn:#b4541a; --warn-soft:#f6dfcf; --ok:#2f7a55;
   --f-display:"Barlow Semi Condensed","Arial Narrow",system-ui,sans-serif;
   --f-body:"Barlow",system-ui,-apple-system,"Segoe UI",sans-serif;
@@ -20,11 +20,11 @@
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
   --bg:#141719; --surface:#1d2124; --ink:#e7eae8; --muted:#9aa3a6; --line:#30363a;
-  --grid:#e2bd45; --grid-soft:#4a3f1c; --solar:#5fbf91; --solar-2:#2f7d5a; --solar-soft:#1f3d2f;
+  --grid:#e2bd45; --grid-soft:#4a3f1c; --solar:#5fbf91; --solar-2:#2f7d5a; --prod:#a8ecc6; --solar-soft:#1f3d2f;
   --warn:#ec8a52; --warn-soft:#4a2a19; --ok:#5fbf91; color-scheme:dark}}
 :root[data-theme="dark"]{
   --bg:#141719; --surface:#1d2124; --ink:#e7eae8; --muted:#9aa3a6; --line:#30363a;
-  --grid:#e2bd45; --grid-soft:#4a3f1c; --solar:#5fbf91; --solar-2:#2f7d5a; --solar-soft:#1f3d2f;
+  --grid:#e2bd45; --grid-soft:#4a3f1c; --solar:#5fbf91; --solar-2:#2f7d5a; --prod:#a8ecc6; --solar-soft:#1f3d2f;
   --warn:#ec8a52; --warn-soft:#4a2a19; --ok:#5fbf91; color-scheme:dark}
 
 *{box-sizing:border-box}
@@ -51,6 +51,12 @@ section{display:grid;gap:12px;min-width:0}
 
 .panel{background:var(--surface);border:1px solid var(--line);padding:16px;min-width:0}
 .chart-box{overflow-x:auto}
+.chart-note{margin:6px 0 0;font:11.5px var(--f-data);color:var(--muted)}
+.seg{display:inline-flex;border:1px solid var(--line)}
+.seg button{font:500 12.5px var(--f-data);background:var(--surface);color:var(--muted);border:0;padding:5px 10px;cursor:pointer}
+.seg button+button{border-left:1px solid var(--line)}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--surface)}
+.seg button:focus-visible{outline:2px solid var(--grid);outline-offset:1px}
 svg text{fill:var(--muted);font-family:var(--f-data);font-size:11px}
 .legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:12.5px;color:var(--muted)}
 .legend i{display:inline-block;width:12px;height:12px;vertical-align:-2px;margin-right:6px}
@@ -225,14 +231,15 @@ footer{color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);padd
   <section>
     <div class="sec-head">
       <h2>Energía por día</h2>
-      <div class="legend">
-        <span><i style="background:var(--grid)"></i>Comprado a CFE (desde la red)</span>
-        <span><i style="background:var(--solar)"></i>Paneles directo a la casa</span>
-        <span><i style="background:var(--solar-2)"></i>Producción total de los paneles</span>
-        <span><i style="background:repeating-linear-gradient(45deg,var(--grid) 0 3px,var(--grid-soft) 3px 6px)"></i>Día parcial</span>
-      </div>
+      <div class="seg" id="rango" role="group" aria-label="Periodo de la gráfica"><button data-r="14">14 días</button><button data-r="30">30 días</button><button data-r="0">Todo</button></div>
     </div>
-    <div class="panel chart-box" id="daily"><div class="empty">La gráfica aparece en cuanto haya registros diarios.</div></div>
+    <div class="legend" style="margin:6px 0 10px">
+      <span><i style="background:var(--solar)"></i>Paneles directo a la casa</span>
+      <span><i style="background:var(--grid)"></i>Comprado a CFE</span>
+      <span><i style="height:4px;vertical-align:3px;background:var(--prod)"></i>Producción total de los paneles</span>
+      <span id="lg-parcial" hidden><i style="background:repeating-linear-gradient(45deg,var(--grid) 0 3px,var(--grid-soft) 3px 6px)"></i>Día parcial</span>
+    </div>
+    <div class="panel"><div class="chart-box" id="daily"><div class="empty">La gráfica aparece en cuanto haya registros diarios.</div></div><p class="chart-note">kWh por día · cada barra es el consumo de la casa; la marca verde clara, lo que produjeron los paneles. Lo que queda entre la parte verde y la marca se envió a CFE.</p></div>
   </section>
 
   <section>
@@ -356,37 +363,47 @@ function render(){
   drawDaily(); drawDays(); drawCircuits(); drawAlerts(avg); drawTable(); drawCruce(); drawResumen(); drawAmbiente();
 }
 
+let rango=window.innerWidth<600?14:30;try{const r=localStorage.getItem("rango");if(r!==null&&[14,30,0].includes(+r))rango=+r}catch(e){}
 function drawDaily(){
   const box=document.getElementById("daily");
-  const data=days.slice(-31).map(d=>{const auto=d.solar!=null?Math.max(0,d.solar-d.exportado):0;return{...d,auto,cons:d.red+auto}});
-  const W=Math.max(640,data.length*34+80,boxW("daily")),H=240,L=44,R=12,T=18,B=34;
+  document.querySelectorAll("#rango button").forEach(b=>b.setAttribute("aria-pressed",String(+b.dataset.r===rango)));
+  const src=rango?days.slice(-rango):days;
+  const data=src.map(d=>{const auto=d.solar!=null?Math.max(0,d.solar-d.exportado):0;return{...d,auto,cons:d.red+auto}});
+  const lp=document.getElementById("lg-parcial");if(lp)lp.hidden=!data.some(d=>d.parcial);
+  const bx=boxW("daily")||640;
+  const W=Math.max(data.length*20+52,bx),H=250,L=36,R=16,T=22,B=26;
   const max=Math.max(...data.map(d=>Math.max(d.cons,d.solar||0)),1);
   const step=niceStep(max/4),top=Math.ceil(max/step)*step;
   const y=v=>T+(H-T-B)*(1-v/top);
-  const bw=Math.min(26,(W-L-R)/data.length*0.62);
-  const x=i=>L+(i+0.5)*(W-L-R)/data.length;
+  const col=(W-L-R)/data.length,bw=Math.min(28,col*0.66);
+  const x=i=>L+(i+0.5)*col;
   const comp=data.filter(d=>!d.parcial&&d.solar!=null);const avg=comp.length?comp.reduce((a,d)=>a+d.cons,0)/comp.length:null;
-  let s=`<svg viewBox="0 0 ${W} ${H}" width="100%" style="min-width:${Math.min(W,640)}px" role="img" aria-label="Consumo diario de la casa: paneles y red">`;
+  let s=`<svg viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" style="display:block;max-width:none" role="img" aria-label="Consumo diario de la casa y producción de los paneles">`;
   s+=`<defs><pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="6" height="6" fill="var(--grid-soft)"/><rect width="3" height="6" fill="var(--grid)"/></pattern></defs>`;
   for(let v=0;v<=top+1e-9;v+=step){s+=`<line x1="${L}" x2="${W-R}" y1="${y(v)}" y2="${y(v)}" stroke="var(--line)" stroke-width="1"/><text x="${L-6}" y="${y(v)+4}" text-anchor="end">${+v.toFixed(2)}</text>`}
+  // etiquetas de fecha sin encimarse: cada k días, siempre la última
+  const k=Math.max(1,Math.ceil(48/col)),last=data.length-1;
+  const lab=i=>i===last||(i%k===0&&last-i>=k);
   data.forEach((d,i)=>{
-    const x0=x(i)-bw/2;
-    if(d.auto>0)s+=`<rect x="${x0}" y="${y(d.auto)}" width="${bw}" height="${y(0)-y(d.auto)}" fill="var(--solar)"><title>${fecha(d.id,true)}: ${f1(d.auto)} kWh de los paneles directo a la casa</title></rect>`;
-    s+=`<rect x="${x0}" y="${y(d.cons)}" width="${bw}" height="${y(d.auto)-y(d.cons)}" fill="${d.parcial?"url(#hatch)":"var(--grid)"}"><title>${fecha(d.id,true)}: ${f1(d.red)} kWh comprados a CFE</title></rect>`;
-    if(d.solar!=null){s+=`<rect x="${x(i)+bw/2+2}" y="${y(d.solar)}" width="${bw*0.6}" height="${y(0)-y(d.solar)}" fill="var(--solar-2)"><title>${fecha(d.id,true)}: paneles produjeron ${f1(d.solar)} kWh (${f1(d.exportado)} se enviaron a la red)</title></rect>`}
-    if(data.length<=16||i%Math.ceil(data.length/12)===0||i===data.length-1)s+=`<text x="${x(i)}" y="${H-B+16}" text-anchor="middle">${fecha(d.id)}</text>`;
-    if(i===data.length-1)s+=`<text x="${x(i)}" y="${y(d.cons)-6}" text-anchor="middle" style="fill:var(--ink);font-weight:500">${f1(d.cons)}</text>`;
+    const x0=x(i)-bw/2,mes=i===0||d.id.slice(5,7)!==data[i-1].id.slice(5,7);
+    if(mes&&i>0)s+=`<line x1="${x(i)-col/2}" x2="${x(i)-col/2}" y1="${T}" y2="${H-B}" stroke="var(--line)" stroke-dasharray="2 3"/>`;
+    if(d.auto>0)s+=`<rect x="${x0}" y="${y(d.auto)}" width="${bw}" height="${y(0)-y(d.auto)}" fill="var(--solar)"/>`;
+    s+=`<rect x="${x0}" y="${y(d.cons)}" width="${bw}" height="${Math.max(0,y(d.auto)-y(d.cons))}" fill="${d.parcial?"url(#hatch)":"var(--grid)"}"/>`;
+    if(d.solar!=null)s+=`<rect x="${x0-3}" y="${y(d.solar)-2}" width="${bw+6}" height="4" rx="1" fill="var(--prod)" stroke="var(--surface)" stroke-width="1"/>`;
+    const tip=`${fecha(d.id,true)}${d.parcial?" (día parcial)":""}\nConsumo de la casa: ${f1(d.cons)} kWh\n· Paneles directo a la casa: ${f1(d.auto)}\n· Comprado a CFE: ${f1(d.red)}`+(d.solar!=null?`\nProducción de los paneles: ${f1(d.solar)} kWh\n· Enviado a CFE: ${f1(d.exportado)}`:"")+`\nNeto con CFE: ${f1(d.red-d.exportado)} kWh`;
+    s+=`<rect x="${x(i)-col/2}" y="${T}" width="${col}" height="${H-B-T}" fill="transparent"><title>${tip}</title></rect>`;
+    if(lab(i))s+=`<text x="${x(i)}" y="${H-B+16}" text-anchor="middle"${i===last?' style="fill:var(--ink)"':""}>${fecha(d.id)}</text>`;
+    if(i===last)s+=`<text x="${x(i)}" y="${Math.min(y(d.cons),d.solar!=null?y(d.solar)-2:1e9)-7}" text-anchor="${col<40?"end":"middle"}" dx="${col<40?bw/2+3:0}" style="fill:var(--ink);font-weight:600">${f1(d.cons)}</text>`;
   });
-  if(avg!=null&&comp.length>1){const ya=y(avg),lab=`C. prom. ${f1(avg)}`,lw=lab.length*7+8;
-    // obstáculos: barras y la cifra de la última barra
-    const ob=[];data.forEach((d,i)=>{const x0=x(i)-bw/2;ob.push([x0-2,x0+bw+2,y(d.cons),H-B]);if(d.solar!=null)ob.push([x(i)+bw/2,x(i)+bw/2+2+bw*0.6+2,y(d.solar),H-B]);if(i===data.length-1)ob.push([x(i)-20,x(i)+20,y(d.cons)-18,y(d.cons)])});
+  if(avg!=null&&comp.length>1){const ya=y(avg),labt=`C. prom. ${f1(avg)}`,lw=labt.length*7+8;
+    const ob=[];data.forEach((d,i)=>{const x0=x(i)-bw/2;ob.push([x0-4,x0+bw+4,Math.min(y(d.cons),d.solar!=null?y(d.solar)-3:1e9),H-B]);if(i===last)ob.push([x(i)-46,x(i)+22,y(Math.max(d.cons,d.solar||0))-22,y(d.cons)])});
     const free=(xr,y1,y2)=>!ob.some(o=>o[0]<xr&&o[1]>xr-lw&&o[2]<y2&&o[3]>y1);
     let lx=null,ly=null;
-    for(const [y1,y2,ty] of [[ya-16,ya-1,ya-5],[ya+2,ya+17,ya+13]]){if(y1<T-4)continue;for(let xr=W-R;xr>=L+lw;xr-=4){if(free(xr,y1,y2)){lx=xr;ly=ty;break}}if(lx!=null)break}
-    if(lx==null){lx=W-R;ly=ya-5}
-    s+=`<line x1="${L}" x2="${W-R}" y1="${ya}" y2="${ya}" stroke="var(--ink)" stroke-dasharray="4 4" stroke-width="1"/><text x="${lx-4}" y="${ly}" text-anchor="end" style="fill:var(--ink);paint-order:stroke;stroke:var(--surface);stroke-width:4px;stroke-linejoin:round">${lab}</text>`}
-  s+=`<text x="${L}" y="${H-4}">kWh por día · la barra de dos colores es el consumo de la casa</text></svg>`;
-  box.innerHTML=s;
+    for(const [y1,y2,ty] of [[ya-16,ya-1,ya-5],[ya+2,ya+17,ya+13]]){if(y1<T-4)continue;for(let xr=W-R;xr>=Math.max(L,W-bx)+lw;xr-=4){if(free(xr,y1,y2)){lx=xr;ly=ty;break}}if(lx!=null)break}
+    if(lx==null){lx=W-R+4;ly=T-8}
+    s+=`<line x1="${L}" x2="${W-R}" y1="${ya}" y2="${ya}" stroke="var(--ink)" stroke-dasharray="4 4" stroke-width="1"/><text x="${lx-4}" y="${ly}" text-anchor="end" style="fill:var(--ink);paint-order:stroke;stroke:var(--surface);stroke-width:4px;stroke-linejoin:round">${ly===T-8?"- - ":""}${labt}</text>`}
+  s+=`</svg>`;
+  box.innerHTML=s;box.scrollLeft=box.scrollWidth;
 }
 function boxW(id){const e=document.getElementById(id);if(!e||!e.clientWidth)return 0;const cs=getComputedStyle(e);return Math.round(e.clientWidth-parseFloat(cs.paddingLeft)-parseFloat(cs.paddingRight))}
 function niceStep(r){const p=Math.pow(10,Math.floor(Math.log10(r)));const n=r/p;return (n<=1?1:n<=2?2:n<=5?5:10)*p}
@@ -486,12 +503,17 @@ function drawResumen(){
   // chart últimos 14 días
   const c=complete().filter(d=>d.solar!=null).slice(-14);if(!c.length)return;
   const W=Math.max(560,c.length*48+60,boxW("rs-chart")),H=220,L=40,R=8,T=14,B=30;const max=Math.max(...c.map(d=>Math.max(d.red-d.exportado+d.solar,d.solar)),1),step=niceStep(max/4),top=Math.ceil(max/step)*step;
-  const y=v=>T+(H-T-B)*(1-v/top),x=i=>L+(i+.5)*(W-L-R)/c.length,bw=Math.min(18,(W-L-R)/c.length*.32);
+  const y=v=>T+(H-T-B)*(1-v/top),x=i=>L+(i+.5)*(W-L-R)/c.length,bw=Math.min(28,(W-L-R)/c.length*.6);
   let s=`<svg viewBox="0 0 ${W} ${H}" width="100%" style="min-width:${Math.min(W,560)}px" role="img" aria-label="Consumo contra producción por día">`;
   for(let v=0;v<=top+1e-9;v+=step)s+=`<line x1="${L}" x2="${W-R}" y1="${y(v)}" y2="${y(v)}" stroke="var(--line)"/><text x="${L-6}" y="${y(v)+4}" text-anchor="end">${v}</text>`;
   c.forEach((d,i)=>{const auto=Math.max(0,d.solar-d.exportado),cons=d.red+auto;
-    s+=`<rect x="${x(i)-bw-1}" y="${y(auto)}" width="${bw}" height="${y(0)-y(auto)}" fill="var(--solar)"><title>${fecha(d.id,true)}: ${f1(auto)} kWh de los paneles directo a la casa</title></rect><rect x="${x(i)-bw-1}" y="${y(cons)}" width="${bw}" height="${y(auto)-y(cons)}" fill="var(--grid)"><title>${fecha(d.id,true)}: ${f1(d.red)} kWh comprados a CFE · consumo ${f1(cons)} kWh</title></rect><rect x="${x(i)+1}" y="${y(d.solar)}" width="${bw}" height="${y(0)-y(d.solar)}" fill="var(--solar-2)"><title>${fecha(d.id,true)}: paneles ${f1(d.solar)} kWh</title></rect><text x="${x(i)}" y="${H-B+15}" text-anchor="middle">${fecha(d.id)}</text>`});
-  s+=`</svg><div class="legend" style="margin-top:8px"><span><i style="background:var(--solar)"></i>Paneles directo a la casa</span><span><i style="background:var(--grid)"></i>Comprado a CFE</span><span><i style="background:var(--solar-2)"></i>Producción total de los paneles</span><span class="note">kWh por día · la barra de dos colores es el consumo de la casa</span></div>`;
+    s+=`<rect x="${x(i)-bw/2}" y="${y(auto)}" width="${bw}" height="${y(0)-y(auto)}" fill="var(--solar)"/><rect x="${x(i)-bw/2}" y="${y(cons)}" width="${bw}" height="${Math.max(0,y(auto)-y(cons))}" fill="var(--grid)"/><rect x="${x(i)-bw/2-3}" y="${y(d.solar)-2}" width="${bw+6}" height="4" rx="1" fill="var(--prod)" stroke="var(--surface)" stroke-width="1"/><rect x="${x(i)-(W-L-R)/c.length/2}" y="${T}" width="${(W-L-R)/c.length}" height="${H-B-T}" fill="transparent"><title>${fecha(d.id,true)}
+Consumo de la casa: ${f1(cons)} kWh
+· Paneles directo a la casa: ${f1(auto)}
+· Comprado a CFE: ${f1(d.red)}
+Producción de los paneles: ${f1(d.solar)} kWh
+· Enviado a CFE: ${f1(d.exportado)}</title></rect><text x="${x(i)}" y="${H-B+15}" text-anchor="middle">${fecha(d.id)}</text>`});
+  s+=`</svg><div class="legend" style="margin-top:8px"><span><i style="background:var(--solar)"></i>Paneles directo a la casa</span><span><i style="background:var(--grid)"></i>Comprado a CFE</span><span><i style="height:4px;vertical-align:3px;background:var(--prod)"></i>Producción total de los paneles</span><span class="note">kWh por día · cada barra es el consumo de la casa; la marca verde clara, lo que produjeron los paneles</span></div>`;
   document.getElementById("rs-chart").innerHTML=s;
 }
 
@@ -535,6 +557,7 @@ document.querySelectorAll(".amb-tabs button").forEach(b=>b.addEventListener("cli
 function goTab(t,push){document.querySelectorAll(".tabpanel").forEach(p=>p.hidden=p.dataset.tab!==t);document.querySelectorAll(".tabs button").forEach(b=>{if(b.dataset.go===t)b.setAttribute("aria-current","page");else b.removeAttribute("aria-current")});try{localStorage.setItem("tab",t)}catch(e){}if(push)window.scrollTo({top:0});if(days.length)render()}
 let _rz;window.addEventListener("resize",()=>{clearTimeout(_rz);_rz=setTimeout(()=>{if(days.length)render()},200)});
 document.querySelectorAll(".tabs button").forEach(b=>b.addEventListener("click",()=>goTab(b.dataset.go,true)));
+document.querySelectorAll("#rango button").forEach(b=>b.addEventListener("click",()=>{rango=+b.dataset.r;try{localStorage.setItem("rango",rango)}catch(e){}if(days.length)drawDaily()}));
 {let t=(location.hash||"").slice(1);if(!["resumen","consumo","paneles","recibo"].includes(t)){try{t=localStorage.getItem("tab")}catch(e){}}if(["resumen","consumo","paneles","recibo"].includes(t))goTab(t)}
 
 /* ---------- ANÁLISIS ---------- */
