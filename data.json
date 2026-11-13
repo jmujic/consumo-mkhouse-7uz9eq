@@ -1949,6 +1949,71 @@
     "Inversor 1": 20.517,
     "Inversor 2": 20.099
    }
+  },
+  "2026-11-12": {
+   "fecha": "2026-11-12",
+   "red": 60.829,
+   "exportado": 12.817,
+   "total": 77.128,
+   "saldo": 29.123,
+   "parcial": true,
+   "capturado": "2026-11-13T10:55:33-05:00",
+   "solar": {
+    "v1": 33.6,
+    "v2": 14.0
+   },
+   "circuitos": {
+    "AA Sala": 31.894,
+    "AA Closet Ppal": 18.28,
+    "AA Closet": 10.134,
+    "AA Hab. Dany": 7.433,
+    "AA Hab. Omi": 4.265,
+    "no se sabe 2x30": 3.24,
+    "Secadora": 1.694,
+    "Hidroneumático": 0.153,
+    "AA Hab. Marita": 0.035,
+    "Horno": 0.0,
+    "AA Cuarto de servicio": 0.0,
+    "AA Hab. Ppal": 0.0,
+    "Congelador": 0.0,
+    "no se sabe": 0.0
+   },
+   "circuitos2": {
+    "Alumbrado Control On/Off (Cocina, Sala, Comedor)": 11.137,
+    "Alumbrado sala": 2.817,
+    "Refrigerador 2 cocina": 2.622,
+    "Alumbrado y contactos Cuarto Dani": 2.406,
+    "Contactos (pastilla 8)": 2.103,
+    "Refrigerador 1 Cocina": 1.888,
+    "Baño Marita": 1.835,
+    "Contactos site 2": 1.274,
+    "Contactos Lavandería cable 1": 1.179,
+    "Contactos (pastilla 10)": 0.955,
+    "Contacto cuarto Omi": 0.87,
+    "Parrilla, Campana, Barra Cocina": 0.866,
+    "Alumbrado y contactos en sala de servicio cuarto Marita": 0.523,
+    "Contactos sala": 0.332,
+    "Alumbrado Control DALI (Cocina, Sala, Comedor)": 0.301,
+    "Cafetera cocina": 0.262,
+    "Contacto vestidor principal": 0.253,
+    "Alumbrado Cuarto Omi": 0.246,
+    "Contactos TV Sala": 0.235,
+    "Contactos lavandería cable 2": 0.023,
+    "Contacto Clóset Omi cable 2": 0.006,
+    "Microondas cocina": 0.006,
+    "Alumbrado, Ventilador de Recámara Principal, closet, Área de juegos y Salita": 0.003,
+    "Contacto coffe station comedor": 0.002,
+    "Contacto exterior terraza 1": 0.001,
+    "Hornos cocina": 0.001,
+    "Lavavajillas": 0.001,
+    "Contacto Clóset Omi cable 1": 0.0,
+    "Contacto exterior terraza 2": 0.0,
+    "Área de luces tocador vestidor y cuarto principal": 0.0
+   },
+   "inversores_emporia": {
+    "Inversor 1": 7.292,
+    "Inversor 2": 7.127
+   }
   }
  },
  "analisis": {
@@ -2383,6 +2448,17 @@
     "Los contactos sumaron 17.4 kWh (12.7 de promedio), con el Contacto vestidor principal en 9.5 kWh y Contactos (pastilla 8) en 2.7.",
     "Circuitos mayores del día: AA Closet (29.9), AA Sala (26.3), AA Closet Ppal (19.1), Alumbrado Control On/Off (12.7) y Contacto vestidor principal (9.5).",
     "Últimos 7 días (5 al 11 de noviembre): 152 kWh/día de consumo, 138 kWh/día de paneles (91 % del consumo) y 14 kWh/día comprados a CFE aplicando excedentes; a ese ritmo el bimestre sería de unos 830 kWh."
+   ]
+  },
+  "2026-11-12": {
+   "fecha": "2026-11-12",
+   "resumen": "Día muy nublado: los paneles produjeron solo 47.6 kWh, lo más bajo desde el 19 de octubre. Se tomaron 60.8 kWh de la red y se enviaron 12.8 kWh de excedentes, así que lo comprado a CFE aplicando excedentes fue de 48.0 kWh. Los datos del tablero 1 no cuadran todavía: la suma de los circuitos medidos (109.3 kWh) es mayor que el consumo que resulta de la red y los paneles (95.6 kWh). Por eso el día queda como parcial, fuera de los promedios, y se vuelve a leer mañana por si Emporia completa datos atrasados.",
+   "puntos": [
+    "Paneles: 33.6 kWh el S. Fotovoltaico 1 y 14.0 kWh el S. Fotovoltaico 2; los canales de inversor del tablero 2 confirman el dato del S. Fotovoltaico 2. Las curvas de Growatt no tienen huecos: la baja es por las nubes.",
+    "Aires: AA Sala marcó 31.9 kWh, su mayor consumo desde el 12 de octubre; AA Closet Ppal 18.3 y AA Closet 10.1.",
+    "Alumbrado: el Alumbrado Control On/Off de cocina, sala y comedor marcó 11.1 kWh.",
+    "Contactos: el Contacto vestidor principal casi no consumió (0.3 kWh, contra 9.5 el día anterior).",
+    "Circuitos mayores del día: AA Sala (31.9), AA Closet Ppal (18.3), Alumbrado Control On/Off (11.1), AA Closet (10.1) y AA Hab. Dany (7.4)."
    ]
   }
  },
@@ -2989,10 +3065,10 @@
   },
   "2026-11": {
    "mes": "2026-11",
-   "v1": 1027.2,
-   "v2": 475.8,
-   "total": 1503.0,
-   "hasta": "2026-11-11",
+   "v1": 1060.8,
+   "v2": 489.8,
+   "total": 1550.6,
+   "hasta": "2026-11-12",
    "parcial": true
   }
  },
