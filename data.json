@@ -2014,6 +2014,71 @@
     "Inversor 1": 7.292,
     "Inversor 2": 7.127
    }
+  },
+  "2026-11-13": {
+   "fecha": "2026-11-13",
+   "red": 76.059,
+   "exportado": 20.649,
+   "total": 129.038,
+   "saldo": 73.632,
+   "parcial": false,
+   "capturado": "2026-11-14T10:03:16-05:00",
+   "solar": {
+    "v1": 76.2,
+    "v2": 32.6
+   },
+   "circuitos": {
+    "AA Sala": 77.98,
+    "AA Closet Ppal": 18.452,
+    "AA Closet": 15.213,
+    "AA Hab. Dany": 7.574,
+    "AA Hab. Omi": 4.398,
+    "no se sabe 2x30": 3.262,
+    "Secadora": 1.977,
+    "Hidroneumático": 0.125,
+    "AA Hab. Marita": 0.043,
+    "Horno": 0.014,
+    "AA Cuarto de servicio": 0.0,
+    "AA Hab. Ppal": 0.0,
+    "Congelador": 0.0,
+    "no se sabe": 0.0
+   },
+   "circuitos2": {
+    "Alumbrado Control On/Off (Cocina, Sala, Comedor)": 5.878,
+    "Refrigerador 2 cocina": 2.564,
+    "Alumbrado y contactos Cuarto Dani": 2.448,
+    "Baño Marita": 2.295,
+    "Contactos Lavandería cable 1": 2.048,
+    "Contactos (pastilla 8)": 1.648,
+    "Refrigerador 1 Cocina": 1.272,
+    "Alumbrado sala": 1.178,
+    "Contactos site 2": 1.137,
+    "Alumbrado Cuarto Omi": 0.911,
+    "Contactos (pastilla 10)": 0.909,
+    "Contacto cuarto Omi": 0.886,
+    "Alumbrado y contactos en sala de servicio cuarto Marita": 0.605,
+    "Parrilla, Campana, Barra Cocina": 0.599,
+    "Contactos sala": 0.336,
+    "Alumbrado Control DALI (Cocina, Sala, Comedor)": 0.309,
+    "Contactos TV Sala": 0.183,
+    "Contacto exterior terraza 1": 0.18,
+    "Contacto exterior terraza 2": 0.164,
+    "Cafetera cocina": 0.05,
+    "Contacto vestidor principal": 0.042,
+    "Contacto Clóset Omi cable 2": 0.032,
+    "Contactos lavandería cable 2": 0.029,
+    "Microondas cocina": 0.016,
+    "Contacto coffe station comedor": 0.014,
+    "Alumbrado, Ventilador de Recámara Principal, closet, Área de juegos y Salita": 0.009,
+    "Hornos cocina": 0.006,
+    "Contacto Clóset Omi cable 1": 0.005,
+    "Área de luces tocador vestidor y cuarto principal": 0.001,
+    "Lavavajillas": 0.0
+   },
+   "inversores_emporia": {
+    "Inversor 1": 16.844,
+    "Inversor 2": 16.511
+   }
   }
  },
  "analisis": {
@@ -2459,6 +2524,20 @@
     "Alumbrado: el Alumbrado Control On/Off de cocina, sala y comedor marcó 11.1 kWh.",
     "Contactos: el Contacto vestidor principal casi no consumió (0.3 kWh, contra 9.5 el día anterior).",
     "Circuitos mayores del día: AA Sala (31.9), AA Closet Ppal (18.3), Alumbrado Control On/Off (11.1), AA Closet (10.1) y AA Hab. Dany (7.4)."
+   ]
+  },
+  "2026-11-13": {
+   "fecha": "2026-11-13",
+   "resumen": "El aire de la sala disparó el consumo: la casa consumió 164.2 kWh, 13 % arriba del promedio desde que se miden los dos tableros (145.0 kWh del 16 de octubre al 11 de noviembre). Los paneles produjeron 108.8 kWh y cubrieron el 66 %. Se tomaron 76.1 kWh de la red y se enviaron 20.6 kWh de excedentes, así que lo comprado a CFE aplicando excedentes fue de 55.4 kWh, lo más alto desde el 31 de octubre.",
+   "puntos": [
+    "AA Sala consumió 78.0 kWh, el máximo desde que se lleva el seguimiento (el anterior era 50.2 el 9 de octubre). Equivale a unos 3.2 kW durante las 24 horas, como si hubiera estado encendido todo el día y toda la noche; conviene confirmar que no se quedó prendido.",
+    "Con los dos tableros, el consumo de la casa se repartió así: aires 123.7 kWh (75 %), alumbrado 11.3 (7 %), contactos 7.8 (5 %), refrigeración 3.8 (2 %), horno y cocina 0.7 (menos de 1 %) y lavandería, hidroneumático y «no se sabe 2x30» 7.5 (5 %). Quedan 9.4 kWh (6 %) que ningún sensor mide todavía.",
+    "Los aires sumaron 123.7 kWh, lo más alto desde el 13 de octubre (57.4 de promedio en los días completos): además de AA Sala, AA Closet Ppal (18.5) y AA Closet (15.2).",
+    "Paneles: 76.2 kWh el S. Fotovoltaico 1 y 32.6 kWh el S. Fotovoltaico 2, todavía abajo de lo normal después del día nublado del 12. Con la ampliación, el S. Fotovoltaico 1 promedia 88.3 kWh diarios desde el 31 de octubre, contra 48.0 en octubre.",
+    "Los contactos bajaron a 7.8 kWh (12.7 de promedio): el Contacto vestidor principal siguió casi sin consumo (0.04 kWh). El alumbrado fue de 11.3 kWh (16.1 de promedio).",
+    "El 12 de noviembre se queda como día parcial: Emporia no cambió sus datos y los circuitos siguen sumando más que el consumo de la casa ese día.",
+    "Circuitos mayores del día: AA Sala (78.0), AA Closet Ppal (18.5), AA Closet (15.2), AA Hab. Dany (7.6) y Alumbrado Control On/Off (5.9).",
+    "Últimos 7 días completos (6 al 13 de noviembre, sin el 12): 149 kWh/día de consumo, 130 kWh/día de paneles (87 % del consumo) y 19 kWh/día comprados a CFE aplicando excedentes; a ese ritmo el bimestre sería de unos 1,130 kWh."
    ]
   }
  },
@@ -3065,10 +3144,10 @@
   },
   "2026-11": {
    "mes": "2026-11",
-   "v1": 1060.8,
-   "v2": 489.8,
-   "total": 1550.6,
-   "hasta": "2026-11-12",
+   "v1": 1137.0,
+   "v2": 522.4,
+   "total": 1659.4,
+   "hasta": "2026-11-13",
    "parcial": true
   }
  },
